@@ -15,13 +15,17 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen pt-24 pb-16 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl opacity-70"></div>
-        <div className="absolute top-3/4 -left-1/4 w-1/2 h-1/2 bg-yellow-100 rounded-full blur-3xl opacity-30"></div>
-      </div>
-
+    <section 
+      className="relative min-h-screen pt-24 pb-16 overflow-hidden bg-cover bg-center"
+      style={{ 
+        backgroundImage: 'url("/lovable-uploads/6b003b32-f099-44ed-823b-a65ab0b60e59.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      {/* Overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+      
       {/* Content container */}
       <div className="container relative max-w-7xl mx-auto px-6 z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -34,18 +38,18 @@ const Hero = () => {
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
               Premium Taxi Service
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Your Journey,<br />
               <span className="text-primary">Our Priority</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-lg">
+            <p className="text-lg text-gray-200 max-w-lg">
               Experience the perfect blend of comfort, reliability, and style with our premium taxi service. Book your ride in seconds.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#booking" className="px-6 py-3 rounded-full bg-primary text-white font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
+              <a href="#booking" className="px-6 py-3 rounded-full bg-primary text-black font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
                 Book Your Ride
               </a>
-              <a href="#fleet" className="px-6 py-3 rounded-full bg-secondary text-foreground font-medium transition-all hover:bg-secondary/80">
+              <a href="#fleet" className="px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white font-medium transition-all hover:bg-white/30 border border-white/40">
                 Explore Our Fleet
               </a>
             </div>
@@ -63,7 +67,7 @@ const Hero = () => {
                     </svg>
                   ))}
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-300">
                   4.9 out of 5 from 3,000+ reviews
                 </p>
               </div>
@@ -80,12 +84,12 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Subtle scroll indicator */}
+      {/* Scroll indicator with transition animation */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-pulse-soft">
-        <p className="text-sm text-gray-400 mb-2">Scroll to explore</p>
+        <p className="text-sm text-white mb-2">Scroll to explore</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-gray-400"
+          className="h-5 w-5 text-white"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

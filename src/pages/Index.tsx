@@ -25,10 +25,49 @@ const Index = () => {
       });
     });
     
+    // Add intersection observer for scroll animations
+    const sections = document.querySelectorAll('section:not(:first-child)');
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Observe all sections except hero
+    sections.forEach(section => {
+      section.querySelectorAll('h2, p, .grid > div').forEach(element => {
+        element.classList.add('scroll-animate');
+        observer.observe(element);
+      });
+    });
+    
+    // Observe any elements with scroll-animate class
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+    
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.removeEventListener('click', () => {});
       });
+      
+      // Clean up the observer
+      if (observer) {
+        sections.forEach(section => {
+          section.querySelectorAll('.scroll-animate').forEach(element => {
+            observer.unobserve(element);
+          });
+        });
+        
+        animatedElements.forEach(element => {
+          observer.unobserve(element);
+        });
+      }
     };
   }, []);
 
