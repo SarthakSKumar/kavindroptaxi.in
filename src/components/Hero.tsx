@@ -19,7 +19,7 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-24 pb-16 overflow-hidden bg-cover bg-center"
       style={{ 
-        backgroundImage: 'url("/lovable-uploads/6b003b32-f099-44ed-823b-a65ab0b60e59.png")',
+        backgroundImage: 'url("/hero.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
