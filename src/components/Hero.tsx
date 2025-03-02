@@ -23,7 +23,7 @@ const Hero = () => {
         backgroundPosition: 'center'
       }}
     >
-      <div className="absolute inset-0 bg-yellow-700/10 bg-gradient-to-b from-transparent via-transparent to-transparent backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-black/30 bg-gradient-to-b from-transparent via-transparent to-transparent backdrop-blur-sm"></div>
 
       {/* Content container */}
       <div className="relative max-w-7xl z-10">
