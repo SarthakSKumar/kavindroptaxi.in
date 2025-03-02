@@ -12,8 +12,6 @@ const ScrollObserver = ({ children }: ScrollObserverProps) => {
         // Toggle class when element is in viewport
         if (entry.isIntersecting) {
           entry.target.classList.add('in-viewport');
-        } else {
-          entry.target.classList.remove('in-viewport');
         }
       });
     }, { threshold: 0.1 });

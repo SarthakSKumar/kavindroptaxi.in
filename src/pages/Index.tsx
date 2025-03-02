@@ -12,12 +12,9 @@ import ScrollObserver from '@/components/ScrollObserver';
 
 const Index = () => {
   useEffect(() => {
-    // Apply initial animation classes
-    document.querySelectorAll('.scroll-section').forEach((section, index) => {
-      // Stagger the initial animations
-      setTimeout(() => {
-        section.classList.add('in-viewport');
-      }, 100 * index);
+    // Make all sections visible initially to fix blank screen issue
+    document.querySelectorAll('.scroll-section').forEach((section) => {
+      section.classList.add('in-viewport');
     });
   }, []);
 
@@ -27,11 +24,21 @@ const Index = () => {
         <Header />
         <main className="flex-1">
           <Hero />
-          <ServicesSection />
-          <FleetSection />
-          <TestimonialsSection />
-          <AboutSection />
-          <ContactSection />
+          <div className="scroll-section">
+            <ServicesSection />
+          </div>
+          <div className="scroll-section">
+            <FleetSection />
+          </div>
+          <div className="scroll-section">
+            <TestimonialsSection />
+          </div>
+          <div className="scroll-section">
+            <AboutSection />
+          </div>
+          <div className="scroll-section">
+            <ContactSection />
+          </div>
         </main>
         <Footer />
       </div>

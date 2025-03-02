@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
 import { cn } from '@/lib/utils';
+import { Whatsapp } from 'lucide-react';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -46,11 +47,17 @@ const Hero = () => {
               Experience the perfect blend of comfort, reliability, and style with our premium taxi service. Book your ride in seconds.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#booking" className="px-6 py-3 rounded-full bg-primary text-black font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
-                Book Your Ride
+              <a href="tel:9060880066" className="px-6 py-3 rounded-full bg-primary text-black font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
+                Call 9060880066
               </a>
-              <a href="#fleet" className="px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white font-medium transition-all hover:bg-white/30 border border-white/40">
-                Explore Our Fleet
+              <a 
+                href="https://wa.me/919060880066" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-6 py-3 rounded-full bg-white text-black font-medium transition-all hover:shadow-lg hover:bg-white/90 flex items-center gap-2"
+              >
+                <Whatsapp className="h-5 w-5" />
+                Whatsapp
               </a>
             </div>
             <div className="flex items-center space-x-6 pt-6">
