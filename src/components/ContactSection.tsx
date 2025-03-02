@@ -129,21 +129,6 @@ const ContactSection = () => {
                   <span className="text-neutral-600">Sunday:</span>
                   <span className="font-medium">24 hours</span>
                 </div>
-
-                <div className="pt-4 mt-4 border-t border-neutral-200">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0">
-                      <Phone className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-neutral-600">
-                        For emergency bookings, call our 24/7 hotline:
-                        <br />
-                        <span className="font-medium">+1 (555) 999-8888</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

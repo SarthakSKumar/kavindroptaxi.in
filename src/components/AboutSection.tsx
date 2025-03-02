@@ -17,12 +17,12 @@ const AboutSection = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Our Premium Taxi Service</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">About KavinDropTaxi</h2>
             <p className="text-neutral-600 mb-6">
-              Founded in 2008, our premium taxi service has been providing exceptional transportation solutions to clients worldwide. We take pride in our professional chauffeurs, luxury vehicles, and unwavering commitment to customer satisfaction.
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nemo voluptate excepturi fuga assumenda aliquam officia animi. Cupiditate, vel quod?
             </p>
             <p className="text-neutral-600 mb-6">
-              Our mission is to deliver safe, reliable, and comfortable transportation that exceeds our clients' expectations. Whether you're traveling for business or pleasure, our service is designed to enhance your journey.
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam ab necessitatibus vel odit numquam unde assumenda voluptatibus? Odit id enim suscipit dicta modi totam laboriosam asperiores! Blanditiis doloribus nulla veniam.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mt-8">

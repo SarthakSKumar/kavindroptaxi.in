@@ -9,6 +9,7 @@ import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import DropCitiesSection from '@/components/DropCitiesSection';
+import PopularDestinationSection from '@/components/PopularDestinationSection';
 
 const Index = () => {
   useEffect(() => {
@@ -25,6 +26,9 @@ const Index = () => {
         <Hero />
         <div className="scroll-section">
           <DropCitiesSection />
+        </div>
+        <div className="scroll-section">
+          <PopularDestinationSection />
         </div>
         <div className="scroll-section">
           <ServicesSection />

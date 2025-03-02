@@ -196,7 +196,7 @@ const DropCitiesSection = () => {
                             key={city.name}
                             className={cn(
                                 "p-2 rounded-lg bg-yellow-300 shadow-sm hover:shadow-md",
-                                "transition-all duration-200 cursor-pointer text-neutral-700",
+                                "transition-all duration-300 cursor-pointer text-neutral-700",
                                 "hover:bg-neutral-800 hover:text-white"
                             )}
                         >
