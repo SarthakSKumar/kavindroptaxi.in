@@ -98,31 +98,31 @@ const BookingForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-neutral-100">
       {/* Form header */}
-      <div className="bg-gray-50 p-6 border-b border-gray-100">
-        <h2 className="text-xl font-semibold text-gray-800">Book Your Ride</h2>
+      <div className="bg-neutral-50 p-6 border-b border-neutral-100">
+        <h2 className="text-xl font-semibold text-neutral-800">Book Your Ride</h2>
         {!isBookingComplete && (
           <div className="flex items-center mt-4">
             {[1, 2, 3].map((step) => (
               <div key={step} className="flex items-center">
-                <div 
+                <div
                   className={cn(
                     "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors",
-                    currentStep === step 
-                      ? "bg-primary text-white" 
-                      : currentStep > step 
-                        ? "bg-green-100 text-green-700" 
-                        : "bg-gray-100 text-gray-500"
+                    currentStep === step
+                      ? "bg-primary text-white"
+                      : currentStep > step
+                        ? "bg-green-100 text-green-700"
+                        : "bg-neutral-100 text-neutral-500"
                   )}
                 >
                   {currentStep > step ? '✓' : step}
                 </div>
                 {step < 3 && (
-                  <div 
+                  <div
                     className={cn(
                       "h-1 w-12 mx-2 transition-colors",
-                      currentStep > step ? "bg-primary" : "bg-gray-200"
+                      currentStep > step ? "bg-primary" : "bg-neutral-200"
                     )}
                   ></div>
                 )}
@@ -141,8 +141,8 @@ const BookingForm = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Booking Confirmed!</h3>
-            <p className="text-gray-600 text-center mb-6">
+            <h3 className="text-xl font-semibold text-neutral-800 mb-2">Booking Confirmed!</h3>
+            <p className="text-neutral-600 text-center mb-6">
               Your taxi will arrive at {pickup} on {date} at {time}.
             </p>
             <button
@@ -157,57 +157,57 @@ const BookingForm = () => {
             {/* Step 1: Location and basic details */}
             <div className={cn("transition-all duration-300", currentStep === 1 ? "block" : "hidden")}>
               <div className="space-y-4">
-                <LocationSearch 
-                  placeholder="Enter pickup location" 
-                  onChange={setPickup} 
+                <LocationSearch
+                  placeholder="Enter pickup location"
+                  onChange={setPickup}
                   defaultValue={pickup}
                 />
-                
-                <LocationSearch 
-                  placeholder="Enter destination" 
-                  onChange={setDestination} 
+
+                <LocationSearch
+                  placeholder="Enter destination"
+                  onChange={setDestination}
                   defaultValue={destination}
                 />
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative">
-                    <div className="flex items-center w-full px-4 py-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-all bg-white">
-                      <CalendarIcon size={18} className="text-gray-400 mr-2 flex-shrink-0" />
+                    <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all bg-white">
+                      <CalendarIcon size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
                       <input
                         type="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                        className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400"
+                        className="flex-1 bg-transparent border-none outline-none text-neutral-800 placeholder:text-neutral-400"
                       />
                     </div>
                   </div>
-                  
+
                   <div className="relative">
-                    <div className="flex items-center w-full px-4 py-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-all bg-white">
-                      <Clock size={18} className="text-gray-400 mr-2 flex-shrink-0" />
+                    <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all bg-white">
+                      <Clock size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
                       <input
                         type="time"
                         value={time}
                         onChange={(e) => setTime(e.target.value)}
-                        className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400"
+                        className="flex-1 bg-transparent border-none outline-none text-neutral-800 placeholder:text-neutral-400"
                       />
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="relative">
-                  <div className="flex items-center w-full px-4 py-3 rounded-lg border border-gray-200 hover:border-gray-300 transition-all bg-white">
-                    <Users size={18} className="text-gray-400 mr-2 flex-shrink-0" />
+                  <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all bg-white">
+                    <Users size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
                     <select
                       value={passengers}
                       onChange={(e) => setPassengers(e.target.value)}
-                      className="flex-1 bg-transparent border-none outline-none text-gray-800 appearance-none cursor-pointer"
+                      className="flex-1 bg-transparent border-none outline-none text-neutral-800 appearance-none cursor-pointer"
                     >
                       {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                         <option key={num} value={num}>{num} Passenger{num !== 1 ? 's' : ''}</option>
                       ))}
                     </select>
-                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
@@ -217,10 +217,10 @@ const BookingForm = () => {
 
             {/* Step 2: Vehicle selection */}
             <div className={cn("transition-all duration-300", currentStep === 2 ? "block" : "hidden")}>
-              <VehicleSelection 
-                vehicles={vehicles} 
-                selectedVehicle={selectedVehicle} 
-                onSelect={setSelectedVehicle} 
+              <VehicleSelection
+                vehicles={vehicles}
+                selectedVehicle={selectedVehicle}
+                onSelect={setSelectedVehicle}
               />
             </div>
 
@@ -241,7 +241,7 @@ const BookingForm = () => {
               {currentStep > 1 && (
                 <button
                   onClick={handleBack}
-                  className="px-5 py-2 border border-gray-300 rounded-full text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+                  className="px-5 py-2 border border-neutral-300 rounded-full text-neutral-700 font-medium hover:bg-neutral-50 transition-colors"
                 >
                   Back
                 </button>
@@ -257,8 +257,8 @@ const BookingForm = () => {
                   className={cn(
                     "px-5 py-2 rounded-full font-medium transition-colors",
                     ((currentStep === 1 && (!pickup || !destination || !date || !time)) ||
-                     (currentStep === 2 && !selectedVehicle))
-                      ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                      (currentStep === 2 && !selectedVehicle))
+                      ? "bg-neutral-200 text-neutral-500 cursor-not-allowed"
                       : "bg-primary text-white hover:bg-primary/90"
                   )}
                 >

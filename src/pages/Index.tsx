@@ -8,7 +8,7 @@ import FleetSection from '@/components/FleetSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import ScrollObserver from '@/components/ScrollObserver';
+import DropCitiesSection from '@/components/DropCitiesSection';
 
 const Index = () => {
   useEffect(() => {
@@ -19,30 +19,31 @@ const Index = () => {
   }, []);
 
   return (
-    <ScrollObserver>
-      <div className="flex min-h-screen flex-col">
-        <Header />
-        <main className="flex-1">
-          <Hero />
-          <div className="scroll-section">
-            <ServicesSection />
-          </div>
-          <div className="scroll-section">
-            <FleetSection />
-          </div>
-          <div className="scroll-section">
-            <TestimonialsSection />
-          </div>
-          <div className="scroll-section">
-            <AboutSection />
-          </div>
-          <div className="scroll-section">
-            <ContactSection />
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </ScrollObserver>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <div className="scroll-section">
+          <DropCitiesSection />
+        </div>
+        <div className="scroll-section">
+          <ServicesSection />
+        </div>
+        <div className="scroll-section">
+          <FleetSection />
+        </div>
+        <div className="scroll-section">
+          <TestimonialsSection />
+        </div>
+        <div className="scroll-section">
+          <AboutSection />
+        </div>
+        <div className="scroll-section">
+          <ContactSection />
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 };
 

@@ -32,7 +32,7 @@ const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }:
     const newValue = e.target.value;
     setValue(newValue);
     onChange(newValue);
-    
+
     // Simple mock suggestion filtering
     if (newValue.trim()) {
       const filtered = mockSuggestions.filter(
@@ -58,13 +58,13 @@ const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }:
 
   return (
     <div className={cn("relative", className)}>
-      <div 
+      <div
         className={cn(
           "flex items-center w-full px-4 py-3 rounded-lg border transition-all duration-200 bg-white",
-          isFocused ? "ring-2 ring-primary/20 border-primary/30" : "border-gray-200 hover:border-gray-300"
+          isFocused ? "ring-2 ring-primary/20 border-primary/30" : "border-neutral-200 hover:border-neutral-300"
         )}
       >
-        <MapPin size={18} className="text-gray-400 mr-2 flex-shrink-0" />
+        <MapPin size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
         <input
           type="text"
           value={value}
@@ -75,12 +75,12 @@ const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }:
             setTimeout(() => setIsFocused(false), 150);
           }}
           placeholder={placeholder}
-          className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400"
+          className="flex-1 bg-transparent border-none outline-none text-neutral-800 placeholder:text-neutral-400"
         />
         {value && (
-          <button 
+          <button
             onClick={handleClearInput}
-            className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
+            className="flex-shrink-0 text-neutral-400 hover:text-neutral-600 transition-colors"
           >
             <X size={16} />
           </button>
@@ -89,16 +89,16 @@ const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }:
 
       {/* Suggestions dropdown */}
       {isFocused && suggestions.length > 0 && (
-        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden animate-scale-in origin-top">
+        <div className="absolute z-10 w-full mt-1 bg-white border border-neutral-200 rounded-lg shadow-lg overflow-hidden animate-scale-in origin-top">
           <ul className="py-1 max-h-60 overflow-auto">
             {suggestions.map((suggestion, index) => (
-              <li 
+              <li
                 key={index}
-                className="px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors flex items-center"
+                className="px-4 py-2 hover:bg-neutral-50 cursor-pointer transition-colors flex items-center"
                 onClick={() => handleSuggestionClick(suggestion)}
               >
-                <MapPin size={16} className="text-gray-400 mr-2 flex-shrink-0" />
-                <span className="text-gray-700">{suggestion}</span>
+                <MapPin size={16} className="text-neutral-400 mr-2 flex-shrink-0" />
+                <span className="text-neutral-700">{suggestion}</span>
               </li>
             ))}
           </ul>

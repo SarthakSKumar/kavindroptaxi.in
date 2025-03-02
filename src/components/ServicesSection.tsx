@@ -3,11 +3,11 @@ import { Check } from "lucide-react";
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section-padding bg-gray-50 scroll-section">
+    <section id="services" className="section-padding bg-neutral-50 scroll-section">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Premium Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-neutral-600 max-w-2xl mx-auto">
             Experience unparalleled comfort and reliability with our comprehensive range of premium taxi services tailored to meet your every need.
           </p>
         </div>
@@ -21,7 +21,7 @@ const ServicesSection = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-3">Airport Transfers</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-neutral-600 mb-6">
               Timely and comfortable transportation to and from airports with flight tracking and waiting time included.
             </p>
             <ul className="space-y-2">
@@ -42,7 +42,7 @@ const ServicesSection = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-3">Business Travel</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-neutral-600 mb-6">
               Professional and discreet service for executives and business professionals with premium vehicles.
             </p>
             <ul className="space-y-2">
@@ -63,7 +63,7 @@ const ServicesSection = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-3">City Tours</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-neutral-600 mb-6">
               Explore the city with our knowledgeable drivers who provide insights into local attractions and hidden gems.
             </p>
             <ul className="space-y-2">

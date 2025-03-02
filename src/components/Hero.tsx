@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
 import { cn } from '@/lib/utils';
-import { Whatsapp } from 'lucide-react';
+import { MessageCircle, PhoneCall, CalendarCheck, Shield, Banknote } from 'lucide-react';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,67 +15,70 @@ const Hero = () => {
   }, []);
 
   return (
-    <section 
-      className="relative min-h-screen pt-24 pb-16 overflow-hidden bg-cover bg-center"
-      style={{ 
-        backgroundImage: 'url("/hero.png")',
+    <section
+      className="relative min-h-screen pt-36 pb-16 overflow-hidden bg-cover bg-center flex flex-col items-center align-center"
+      style={{
+        backgroundImage: 'url("/hero2.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
-      {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-      
+      <div className="absolute inset-0 bg-yellow-700/10 bg-gradient-to-b from-transparent via-transparent to-transparent backdrop-blur-sm"></div>
+
       {/* Content container */}
-      <div className="container relative max-w-7xl mx-auto px-6 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl z-10">
+        <div className="flex flex-row justify-between items-center gap-12 pt-6">
           {/* Left column - Text content */}
           <div className={cn(
-            "flex flex-col space-y-6 transition-all duration-700 delay-100",
+            "flex flex-col space-y-6 w-2/3 transition-all duration-700 delay-100",
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold bg-yellow-50 text-primary">
-              <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-              Premium Taxi Service
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Your Journey,<br />
-              <span className="text-primary">Our Priority</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-3">
+              <span className="text-primary"> Fast and Reliable</span><br />
+              One-Way Taxi Service for you
             </h1>
-            <p className="text-lg text-gray-200 max-w-lg">
-              Experience the perfect blend of comfort, reliability, and style with our premium taxi service. Book your ride in seconds.
+            <p className="text-lg text-white max-w-xl">
+              Experience a smooth and secure one-way drop taxi service with our affordable and convenient cab booking options.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="tel:9060880066" className="px-6 py-3 rounded-full bg-primary text-black font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
-                Call 9060880066
+              <a href="tel:9060880066" className="flex flex-row items-center gap-1.5 font-semibold px-5 py-2.5 rounded-full bg-primary text-black font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
+                <PhoneCall className="w-5 h-5" /> +91 90608 80066
               </a>
-              <a 
-                href="https://wa.me/919060880066" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="px-6 py-3 rounded-full bg-white text-black font-medium transition-all hover:shadow-lg hover:bg-white/90 flex items-center gap-2"
+              <a
+                href="https://wa.me/+919060880066"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-800 px-5 py-2.5 rounded-full bg-[#24d266] font-medium transition-all hover:shadow-lg hover:bg-[#24d266]/90 flex items-center gap-1.5"
               >
-                <Whatsapp className="h-5 w-5" />
-                Whatsapp
+                <img src="/whatsapp.svg" className="w-6 h-6" alt="WhatsApp Logo" />
               </a>
             </div>
-            <div className="flex items-center space-x-6 pt-6">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200"></div>
-                ))}
-              </div>
-              <div>
-                <div className="text-amber-500 flex">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+            <div className="flex items-center justify-between pt-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="p-2 bg-primary/20 rounded-full">
+                    <CalendarCheck className="h-5 w-5 text-primary" />
+                  </div>
+                  <p className="text-sm text-white">
+                    Easy and convenient booking
+                  </p>
                 </div>
-                <p className="text-sm text-gray-300">
-                  4.9 out of 5 from 3,000+ reviews
-                </p>
+                <div className="flex items-center gap-2">
+                  <div className="p-2 bg-primary/20 rounded-full">
+                    <Shield className="h-5 w-5 text-primary" />
+                  </div>
+                  <p className="text-sm text-white">
+                    Comfortable and safe rides
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="p-2 bg-primary/20 rounded-full">
+                    <Banknote className="h-5 w-5 text-primary" />
+                  </div>
+                  <p className="text-sm text-white">
+                    Cost-effective pricing
+                  </p>
+                </div>
               </div>
             </div>
           </div>

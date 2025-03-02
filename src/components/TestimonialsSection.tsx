@@ -1,11 +1,11 @@
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding bg-gray-50 scroll-section">
+    <section className="section-padding bg-neutral-50 scroll-section">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-neutral-600 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our valued clients have to say about their experience with our premium taxi service.
           </p>
         </div>
@@ -15,11 +15,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200"></div>
+                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
               </div>
               <div>
                 <h4 className="font-semibold">Sarah Johnson</h4>
-                <p className="text-gray-500 text-sm">Business Executive</p>
+                <p className="text-neutral-500 text-sm">Business Executive</p>
               </div>
             </div>
             <div className="text-amber-500 flex mb-4">
@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
                 </svg>
               ))}
             </div>
-            <p className="text-gray-600">
+            <p className="text-neutral-600">
               "I rely on this service for all my business travel needs. The drivers are professional, the vehicles are immaculate, and they're always on time. Couldn't ask for more!"
             </p>
           </div>
@@ -38,11 +38,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200"></div>
+                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
               </div>
               <div>
                 <h4 className="font-semibold">David Roberts</h4>
-                <p className="text-gray-500 text-sm">Frequent Traveler</p>
+                <p className="text-neutral-500 text-sm">Frequent Traveler</p>
               </div>
             </div>
             <div className="text-amber-500 flex mb-4">
@@ -52,7 +52,7 @@ const TestimonialsSection = () => {
                 </svg>
               ))}
             </div>
-            <p className="text-gray-600">
+            <p className="text-neutral-600">
               "Their airport transfer service is fantastic. My flight was delayed by hours, but the driver tracked my flight and was waiting when I arrived. That's what I call great service!"
             </p>
           </div>
@@ -61,11 +61,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200"></div>
+                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
               </div>
               <div>
                 <h4 className="font-semibold">Emily Chen</h4>
-                <p className="text-gray-500 text-sm">Tourism Manager</p>
+                <p className="text-neutral-500 text-sm">Tourism Manager</p>
               </div>
             </div>
             <div className="text-amber-500 flex mb-4">
@@ -75,7 +75,7 @@ const TestimonialsSection = () => {
                 </svg>
               ))}
             </div>
-            <p className="text-gray-600">
+            <p className="text-neutral-600">
               "I regularly book their services for our VIP clients. The quality is consistent, the booking process is effortless, and the vehicles are top-notch. Highly recommended!"
             </p>
           </div>

@@ -1,7 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, PhoneCall, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+const navigationItems = [
+  { label: 'Home', href: '#' },
+  { label: 'Drop Cities', href: '#cities' },
+  { label: 'Our Services', href: '#services' },
+  { label: 'Our Fleet', href: '#fleet' },
+  { label: 'About Us', href: '#about' },
+];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,54 +35,36 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 lg:px-12',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-1 px-6 lg:px-12',
         isScrolled ? 'bg-white/90 backdrop-blur-lg shadow-sm' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a 
-          href="/" 
+        <a
+          href="/"
           className="text-2xl font-semibold tracking-tight text-foreground transition-opacity hover:opacity-90"
         >
-          <span className="text-primary">Ride</span>Swift
+          <img src="/Logo.png" className="w-40" />
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a 
-            href="#" 
-            className="text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
-          >
-            Home
-          </a>
-          <a 
-            href="#services" 
-            className="text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
-          >
-            Services
-          </a>
-          <a 
-            href="#fleet" 
-            className="text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
-          >
-            Our Fleet
-          </a>
-          <a 
-            href="#about" 
-            className="text-sm font-medium text-foreground/90 transition-colors hover:text-primary"
-          >
-            About
-          </a>
-          <a 
-            href="#contact" 
-            className="text-sm font-medium px-4 py-2 rounded-full bg-primary text-white transition-all hover:shadow-md hover:bg-primary/90"
-          >
-            Book Now
+          {navigationItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={cn("text-base font-medium text-foreground/90 hover:underline hover:underline-offset-4 decoration-4 decoration-primary transition-all duration-200", isScrolled ? "text-foreground" : "text-white")}
+            >
+              {item.label}
+            </a>
+          ))}
+          <a href="tel:9060880066" className="flex flex-row items-center gap-1.5 font-semibold px-5 py-2.5 rounded-full bg-primary text-black font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
+            <PhoneCall className="w-5 h-5"/> +91 90608 80066
           </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           onClick={toggleMobileMenu}
           className="p-2 md:hidden text-foreground"
           aria-label="Toggle menu"
@@ -85,7 +74,7 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div 
+      <div
         className={cn(
           'fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out pt-20',
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full',
@@ -93,41 +82,20 @@ const Header = () => {
         )}
       >
         <nav className="flex flex-col items-center space-y-8 p-8">
-          <a 
-            href="#" 
-            className="text-lg font-medium text-foreground transition-colors hover:text-primary"
-            onClick={toggleMobileMenu}
-          >
-            Home
-          </a>
-          <a 
-            href="#services" 
-            className="text-lg font-medium text-foreground transition-colors hover:text-primary"
-            onClick={toggleMobileMenu}
-          >
-            Services
-          </a>
-          <a 
-            href="#fleet" 
-            className="text-lg font-medium text-foreground transition-colors hover:text-primary"
-            onClick={toggleMobileMenu}
-          >
-            Our Fleet
-          </a>
-          <a 
-            href="#about" 
-            className="text-lg font-medium text-foreground transition-colors hover:text-primary"
-            onClick={toggleMobileMenu}
-          >
-            About
-          </a>
-          <a 
-            href="#contact" 
-            className="w-full text-center text-lg font-medium px-4 py-3 rounded-full bg-primary text-white transition-all hover:bg-primary/90"
-            onClick={toggleMobileMenu}
-          >
-            Book Now
-          </a>
+          {navigationItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={toggleMobileMenu}
+              className={
+                item.label === 'Book Now'
+                  ? "w-full text-center text-lg font-medium px-4 py-3 rounded-full bg-primary text-white transition-all hover:bg-primary/90"
+                  : "text-lg font-medium text-foreground transition-colors hover:text-primary"
+              }
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
