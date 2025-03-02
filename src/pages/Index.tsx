@@ -43,7 +43,7 @@ const Index = () => {
         <section id="services" className="py-20 bg-white">
           <div className="container max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-50 text-primary rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-sm font-semibold bg-yellow-50 text-primary rounded-full mb-3">
                 Our Services
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -107,7 +107,7 @@ const Index = () => {
         <section id="fleet" className="py-20 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-50 text-primary rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-sm font-semibold bg-yellow-50 text-primary rounded-full mb-3">
                 Our Fleet
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -192,7 +192,7 @@ const Index = () => {
           <div className="container max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-50 text-primary rounded-full mb-3">
+                <span className="inline-block px-3 py-1 text-sm font-semibold bg-yellow-50 text-primary rounded-full mb-3">
                   About Us
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -268,7 +268,7 @@ const Index = () => {
         <section id="contact" className="py-20 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-50 text-primary rounded-full mb-3">
+              <span className="inline-block px-3 py-1 text-sm font-semibold bg-yellow-50 text-primary rounded-full mb-3">
                 Contact Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">

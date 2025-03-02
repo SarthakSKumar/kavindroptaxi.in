@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -right-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl opacity-70"></div>
-        <div className="absolute top-3/4 -left-1/4 w-1/2 h-1/2 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute top-3/4 -left-1/4 w-1/2 h-1/2 bg-yellow-100 rounded-full blur-3xl opacity-30"></div>
       </div>
 
       {/* Content container */}
@@ -30,7 +30,7 @@ const Hero = () => {
             "flex flex-col space-y-6 transition-all duration-700 delay-100",
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold bg-blue-50 text-primary">
+            <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold bg-yellow-50 text-primary">
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
               Premium Taxi Service
             </div>
