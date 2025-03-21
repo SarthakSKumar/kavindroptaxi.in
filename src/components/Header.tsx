@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const navigationItems = [
   { label: 'Home', href: '#' },
   { label: 'Drop Cities', href: '#cities' },
-  { label: 'Our Services', href: '#services' },
+  // { label: 'Our Services', href: '#services' },
   { label: 'Our Fleet', href: '#fleet' },
   { label: 'About Us', href: '#about' },
 ];
@@ -58,8 +58,8 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <a href="tel:9060880066" className="flex flex-row items-center gap-1.5 font-semibold px-5 py-2.5 rounded-full bg-primary text-black font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
-            <PhoneCall className="w-5 h-5"/> +91 90608 80066
+          <a href="tel:9994680220" className="flex flex-row items-center gap-1.5 font-semibold px-5 py-2.5 rounded-full bg-primary text-black  transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90">
+            <PhoneCall className="w-5 h-5"/> +91 9994680220
           </a>
         </nav>
 

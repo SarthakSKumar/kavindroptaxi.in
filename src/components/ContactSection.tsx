@@ -25,7 +25,7 @@ const ContactSection = () => {
                       type="text"
                       id="name"
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                      placeholder="John Doe"
+                      placeholder="your name"
                     />
                   </div>
                   <div>
@@ -34,7 +34,7 @@ const ContactSection = () => {
                       type="email"
                       id="email"
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                      placeholder="john@example.com"
+                      placeholder="name@example.com"
                     />
                   </div>
                 </div>
@@ -78,9 +78,11 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Our Location</h4>
                     <p className="text-neutral-600 mt-1">
-                      123 Business Avenue, <br />
-                      New York, NY 10001, <br />
-                      United States
+                    2/97 Pillayar Kovil Street Nadukkuppam post 
+                     <br />
+                     and village Arani Taluk
+                     <br />
+                     Tiruvannamalai district 606903 
                     </p>
                   </div>
                 </div>
@@ -92,8 +94,8 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Phone Numbers</h4>
                     <p className="text-neutral-600 mt-1">
-                      Bookings: +1 (555) 123-4567 <br />
-                      Support: +1 (555) 765-4321
+                      Bookings: +91 9994680220 <br />
+                      Support: +91 9994680220
                     </p>
                   </div>
                 </div>

@@ -1,5 +1,68 @@
-
+import React from "react";
 import { Check } from "lucide-react";
+
+const cars = [
+  {
+    name: "Toyota Etios",
+    image: "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20171208103441_Toyota-Etios-front.jpg&w=700&c=1",
+    description: "A reliable and comfortable sedan, perfect for city and highway travel.",
+    features: ["4 passengers", "2 luggage", "Air conditioning", "Fuel efficient"],
+  },
+  {
+    name: "Maruti Suzuki Swift Dzire",
+    image: "https://i.ndtvimg.com/i/2017-06/maruti-suzuki-dzire-styling_827x510_81498479945.jpg",
+    description: "A compact sedan with great mileage and a smooth driving experience.",
+    features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
+  },
+  {
+    name: "Honda Amaze",
+    image: "https://www.carandbike.com/_next/image?url=https%3A%2F%2Fc.ndtvimg.com%2F2021-08%2Fk9k5jqa_honda-amaze-facelift-2021-_650x400_25_August_21.jpg&w=3840&q=75",
+    description: "A stylish and fuel-efficient sedan offering a comfortable ride.",
+    features: ["4 passengers", "2 luggage", "Spacious cabin", "ABS braking system"],
+  },
+  {
+    name: "Maruti Suzuki Ciaz",
+    image: "https://images.cardekho.com/images/expert-review/Maruti-Suzuki-Ciaz/04.jpg",
+    description: "A premium sedan with luxury interiors and advanced features.",
+    features: ["4 passengers", "3 luggage", "Premium interior", "Touchscreen infotainment"],
+  },
+  {
+    name: "Toyota Innova",
+    image: "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20111217093444_5.jpg&w=700&c=1",
+    description: "A spacious and powerful SUV ideal for long-distance travel.",
+    features: ["7 passengers", "5 luggage", "Comfort seating", "Rear AC vents"],
+  },
+  {
+    name: "Toyota Innova Crysta",
+    image: "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/1.75Ltoyotainnovarystaaimg.jpg",
+    description: "A premium version of the Innova, with added luxury and comfort.",
+    features: ["7 passengers", "5 luggage", "Leather seats", "Enhanced safety features"],
+  },
+  {
+    name: "Mahindra Xylo",
+    image: "https://www.motorbeam.com/wp-content/uploads/2009/01/mahindra_xylo_india-1200x993.jpg",
+    description: "A multi-utility vehicle with ample space and durability.",
+    features: ["7 passengers", "4 luggage", "Spacious interiors", "High ground clearance"],
+  },
+  {
+    name: "Mahindra Marazzo",
+    image: "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20181116033915_Marazzo-front-static.jpg&w=700&c=1",
+    description: "A stylish and comfortable MUV with modern features.",
+    features: ["7 passengers", "4 luggage", "Climate control", "Enhanced suspension"],
+  },
+  {
+    name: "Maruti Suzuki Ertiga",
+    image: "https://i.ytimg.com/vi/pEcguEAAlAE/maxresdefault.jpg",
+    description: "A budget-friendly and efficient MUV for family trips.",
+    features: ["7 passengers", "4 luggage", "Fuel efficient", "Smartplay infotainment system"],
+  },
+  {
+    name: "Toyota Rumion",
+    image: "https://imgd.aeplcdn.com/664x374/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80",
+    description: "A practical and comfortable MUV with excellent performance.",
+    features: ["7 passengers", "4 luggage", "Spacious interiors", "Reliable engine performance"],
+  }
+];
 
 const FleetSection = () => {
   return (
@@ -12,87 +75,33 @@ const FleetSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Car 1 */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-md hover-lift">
-            <div className="h-48 bg-neutral-200">
-              {/* Car Image */}
-            </div>
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold">Economy Sedan</h3>
-                <span className="text-primary font-medium">from $25</span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {cars.map((car, index) => (
+            <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover-lift h-[280px]">
+              <div className="h-[160px] w-full overflow-hidden flex justify-center items-center bg-neutral-200">
+                <img src={car.image} alt={car.name} className="h-full w-full object-cover" />
               </div>
-              <p className="text-neutral-600 mb-6">
-                Perfect for city travel and short distances with comfort and efficiency.
-              </p>
-              <ul className="space-y-2 mb-6">
-                {["4 passengers", "2 luggage", "Air conditioning", "USB charging"].map((item, i) => (
-                  <li key={i} className="flex items-center text-sm">
-                    <Check className="h-4 w-4 text-primary mr-2" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="w-full py-2 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors">
-                Book Now
-              </button>
-            </div>
-          </div>
-
-          {/* Car 2 */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-md hover-lift">
-            <div className="h-48 bg-neutral-200">
-              {/* Car Image */}
-            </div>
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold">Business SUV</h3>
-                <span className="text-primary font-medium">from $40</span>
+              <div className="p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="text-lg font-semibold">{car.name}</h3>
+                </div>
+                <p className="text-neutral-600 text-sm mb-4">{car.description}</p>
+                
+                {/*  car features */}
+                {/* <ul className="space-y-1 mb-4 text-sm">
+                  {car.features.map((feature, i) => (
+                    <li key={i} className="flex items-center">
+                      <Check className="h-4 w-4 text-primary mr-2" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul> */}
+                {/* <button className="w-full py-2 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors">
+                  Book Now
+                </button> */}
               </div>
-              <p className="text-neutral-600 mb-6">
-                Spacious and comfortable for business travel or family trips with extra luggage.
-              </p>
-              <ul className="space-y-2 mb-6">
-                {["6 passengers", "4 luggage", "Premium interior", "Wi-Fi equipped"].map((item, i) => (
-                  <li key={i} className="flex items-center text-sm">
-                    <Check className="h-4 w-4 text-primary mr-2" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="w-full py-2 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors">
-                Book Now
-              </button>
             </div>
-          </div>
-
-          {/* Car 3 */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-md hover-lift">
-            <div className="h-48 bg-neutral-200">
-              {/* Car Image */}
-            </div>
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold">Luxury Sedan</h3>
-                <span className="text-primary font-medium">from $60</span>
-              </div>
-              <p className="text-neutral-600 mb-6">
-                Premium luxury experience with professional chauffeur and top-tier amenities.
-              </p>
-              <ul className="space-y-2 mb-6">
-                {["3 passengers", "3 luggage", "Premium amenities", "Professional chauffeur"].map((item, i) => (
-                  <li key={i} className="flex items-center text-sm">
-                    <Check className="h-4 w-4 text-primary mr-2" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="w-full py-2 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors">
-                Book Now
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

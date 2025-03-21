@@ -18,7 +18,7 @@ const Footer = () => {
             <p className="text-neutral-400 my-8">
               Experience the perfect blend of comfort, reliability, and style with our premium taxi service. Available 24/7 for your convenience.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="#" className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
                 <Facebook size={16} />
               </a>
@@ -31,7 +31,7 @@ const Footer = () => {
               <a href="#" className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
                 <Linkedin size={16} />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -41,9 +41,9 @@ const Footer = () => {
               <li>
                 <a href="#" className="text-neutral-400 hover:text-primary transition-colors">Home</a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#services" className="text-neutral-400 hover:text-primary transition-colors">Services</a>
-              </li>
+              </li> */}
               <li>
                 <a href="#fleet" className="text-neutral-400 hover:text-primary transition-colors">Our Fleet</a>
               </li>
@@ -53,9 +53,9 @@ const Footer = () => {
               <li>
                 <a href="#contact" className="text-neutral-400 hover:text-primary transition-colors">Contact</a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="text-neutral-400 hover:text-primary transition-colors">Terms & Conditions</a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -66,13 +66,14 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="text-primary mr-3 mt-1 flex-shrink-0" />
                 <span className="text-neutral-400">
-                  1234 Street Name, City Name, United States
+                2/97 Pillayar Kovil Street Nadukkuppam post and village Arani Taluk
+                Tiruvannamalai district 606903
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="text-primary mr-3 flex-shrink-0" />
                 <a href="tel:+1234567890" className="text-neutral-400 hover:text-white transition-colors">
-                  +1 (234) 567-890
+                  +91 9994680220
                 </a>
               </li>
               <li className="flex items-center">

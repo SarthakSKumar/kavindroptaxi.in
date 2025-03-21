@@ -1,5 +1,6 @@
 import { Clock, MapPin, Coins } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'; 
+import bangalore from '../../public/popular/bangalore.jpg';
 
 type Destination = {
     from: string;
@@ -17,39 +18,39 @@ const destinations: Destination[] = [
         distance: "346.7 km",
         duration: "5 hr 52 min",
         price: 4461,
-        image: "/hero2.jpg"
+        image: "/bangalore.jpg"
     },
     {
         from: "Chennai",
         to: "Pondicherry",
         distance: "150.7 km",
-        duration: "2 hr 36 min",
+        duration: "3 hr 10 min",
         price: 2112,
-        image: "/hero2.jpg"
+        image: "/pondi.jpg"
     },
     {
         from: "Chennai",
         to: "Madurai",
         distance: "462.3 km",
-        duration: "7 hr 6 min",
+        duration: "7 hr 50 min",
         price: 5856,
-        image: "/hero2.jpg"
+        image: "/madurai.jpg"
     },
     {
         from: "Chennai",
         to: "Trichy",
         distance: "331.8 km",
-        duration: "5 hr 8 min",
+        duration: "5 hr 30 min",
         price: 4284,
-        image: "/hero2.jpg"
+        image: "/trichy.jpg"
     },
     {
         from: "Chennai",
         to: "Coimbatore",
         distance: "505.5 km",
-        duration: "8 hr 14 min",
+        duration: "8 hr 50 min",
         price: 6372,
-        image: "/hero2.jpg"
+        image: "/coimbatore.jpg"
     },
     {
         from: "Coimbatore",
@@ -65,7 +66,7 @@ const destinations: Destination[] = [
         distance: "344.5 km",
         duration: "6 hr 24 min",
         price: 4778,
-        image: "/hero2.jpg"
+        image: "/salem.jpg"
     },
     {
         from: "Chennai",
@@ -73,7 +74,7 @@ const destinations: Destination[] = [
         distance: "406.7 km",
         duration: "7 hr 8 min",
         price: 5587,
-        image: "/hero2.jpg"
+        image: "/erode.jpg"
     },
     {
         from: "Coimbatore",
@@ -81,7 +82,7 @@ const destinations: Destination[] = [
         distance: "86.8 km",
         duration: "2 hr 45 min",
         price: 1990,
-        image: "/hero2.jpg"
+        image: "/ooty.jpg"
     },
 ];
 
@@ -125,12 +126,15 @@ const PopularDestinationSection = () => {
                                         </div>
                                     </div>
                                     <div className="mt-4 flex items-center justify-between">
-                                        <div className="text-lg font-bold px-2 bg-primary">
+                                        {/* <div className="text-lg font-bold px-2 bg-primary">
                                             ₹{dest.price}
-                                        </div>
-                                        <button className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors">
-                                            Enquire
+                                        </div> */}
+                                        <button
+                                        className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+                                        onClick={() => window.open("https://wa.me/919994680220?text=Hello, I would like to enquire about your services.", "_blank")}>
+                                        Enquire
                                         </button>
+
                                     </div>
                                 </div>
                             </div>

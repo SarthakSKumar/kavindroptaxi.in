@@ -13,30 +13,76 @@ export type VehicleType = {
 
 const vehicles: VehicleType[] = [
   {
-    id: 'suv',
-    name: 'SUV',
+    id: 'suv1',
+    name: 'Toyota Innova single 20 RT 18',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },
+  {
+    id: 'suv2',
+    name: 'Toyota Innova Crysta single 22 RT',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },
+  {
+    id: 'suv3',
+    name: 'MUV single 19 RT 17',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },
+  {
+    id: 'suv4',
+    name: 'Mahindra Xylo',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },  {
+    id: 'suv5',
+    name: 'Mahindra Marrazo',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },  {
+    id: 'suv6',
+    name: 'Maruti Suzuki Ertiga ',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },  {
+    id: 'suv7',
+    name: 'Toyota Rumion',
     capacity: 7,
     image: '/vehicles/suv.jpg',
     description: 'Perfect for family road trips'
   },
   {
     id: 'sedan',
-    name: 'Sedan',
+    name: 'Toyota Etios',
     capacity: 4,
     image: '/vehicles/sedan.jpg',
     description: 'Comfortable for small groups'
   },
   {
-    id: 'etios',
+    id: 'sedan2',
     name: 'Etios',
     capacity: 4,
     image: '/hero2.jpg',
     description: 'Economic and fuel efficient'
   },
   {
-    id: 'innova',
-    name: 'Innova',
-    capacity: 7,
+    id: 'sedan3',
+    name: 'Honda Amaze',
+    capacity: 4,
+    image: '/vehicles/innova.jpg',
+    description: 'Spacious premium family vehicle'
+  },
+  {
+    id: 'sedan4',
+    name: 'Maruti Suzuki Ciaz',
+    capacity: 4,
     image: '/vehicles/innova.jpg',
     description: 'Spacious premium family vehicle'
   },
@@ -110,8 +156,23 @@ const BookingForm = () => {
                 className="flex-1 bg-transparent border-none outline-none"
               />
             </div>
-
+            
+            {/* Mobile Number */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
+            <Phone className="text-neutral-400 w-5 h-5 mr-2" />
+            <input
+              type="tel"
+              placeholder="Mobile Number"
+              value={formData.mobile}
+              onChange={(e) => handleInputChange("mobile", e.target.value)}
+              pattern="[6-9]{1}[0-9]{9}" // Ensures valid Indian number
+              maxLength={10} // Limits input to 10 digits
+              required
+              className="flex-1 bg-transparent border-none outline-none"
+            />
+          </div>
+
+            {/* <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Phone className="text-neutral-400 w-5 h-5 mr-2" />
               <input
                 type="tel"
@@ -120,7 +181,7 @@ const BookingForm = () => {
                 onChange={(e) => handleInputChange('mobile', e.target.value)}
                 className="flex-1 bg-transparent border-none outline-none"
               />
-            </div>
+            </div> */}
 
             {/* Location Fields */}
             <LocationSearch
@@ -137,16 +198,19 @@ const BookingForm = () => {
 
             {/* Date and Time */}
             <div className="grid grid-cols-2 gap-4">
+  {/* Date Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
                 <CalendarIcon className="text-neutral-400 w-5 h-5 mr-2" />
                 <input
                   type="date"
                   value={formData.date}
                   onChange={(e) => handleInputChange('date', e.target.value)}
+                  min={new Date().toISOString().split('T')[0]} // Restricts past dates
                   className="flex-1 bg-transparent border-none outline-none placeholder-neutral-200"
                 />
               </div>
 
+              {/* Time Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
                 <input
                   type="time"
@@ -156,7 +220,6 @@ const BookingForm = () => {
                 />
               </div>
             </div>
-
             {/* Vehicle Selection */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Car className="text-neutral-400 w-5 h-5 mr-2" />

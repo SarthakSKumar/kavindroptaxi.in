@@ -18,7 +18,7 @@ const TestimonialsSection = () => {
                 <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
               </div>
               <div>
-                <h4 className="font-semibold">Sarah Johnson</h4>
+                <h4 className="font-semibold">Gautham</h4>
                 <p className="text-neutral-500 text-sm">Business Executive</p>
               </div>
             </div>
@@ -41,7 +41,7 @@ const TestimonialsSection = () => {
                 <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
               </div>
               <div>
-                <h4 className="font-semibold">David Roberts</h4>
+                <h4 className="font-semibold">Omkar</h4>
                 <p className="text-neutral-500 text-sm">Frequent Traveler</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
                 <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
               </div>
               <div>
-                <h4 className="font-semibold">Emily Chen</h4>
+                <h4 className="font-semibold">	Abhinav</h4>
                 <p className="text-neutral-500 text-sm">Tourism Manager</p>
               </div>
             </div>

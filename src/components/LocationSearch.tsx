@@ -1,7 +1,119 @@
 
-import { useState } from 'react';
-import { Search, MapPin, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
+// import { useState } from 'react';
+// import { Search, MapPin, X } from 'lucide-react';
+// import { cn } from '@/lib/utils';
+
+// interface LocationSearchProps {
+//   placeholder: string;
+//   defaultValue?: string;
+//   onChange: (value: string) => void;
+//   className?: string;
+// }
+
+// const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }: LocationSearchProps) => {
+//   const [value, setValue] = useState(defaultValue);
+//   const [isFocused, setIsFocused] = useState(false);
+//   const [suggestions, setSuggestions] = useState<string[]>([]);
+
+//   // Mock suggestions - in a real app, these would come from an API
+//   const mockSuggestions = [
+//     "Airport Terminal 1",
+//     "Airport Terminal 2",
+//     "Central Station",
+//     "Downtown",
+//     "Business District",
+//     "Convention Center",
+//     "Shopping Mall",
+//     "Marina Bay Hotel",
+//     "Grand Plaza"
+//   ];
+
+//   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     const newValue = e.target.value;
+//     setValue(newValue);
+//     onChange(newValue);
+
+//     // Simple mock suggestion filtering
+//     if (newValue.trim()) {
+//       const filtered = mockSuggestions.filter(
+//         suggestion => suggestion.toLowerCase().includes(newValue.toLowerCase())
+//       );
+//       setSuggestions(filtered);
+//     } else {
+//       setSuggestions([]);
+//     }
+//   };
+
+//   const handleSuggestionClick = (suggestion: string) => {
+//     setValue(suggestion);
+//     onChange(suggestion);
+//     setSuggestions([]);
+//   };
+
+//   const handleClearInput = () => {
+//     setValue('');
+//     onChange('');
+//     setSuggestions([]);
+//   };
+
+//   return (
+//     <div className={cn("relative", className)}>
+//       <div
+//         className={cn(
+//           "flex items-center w-full px-4 py-3 rounded-lg border transition-all duration-200 bg-white",
+//           isFocused ? "ring-2 ring-primary/20 border-primary/30" : "border-neutral-200 hover:border-neutral-300"
+//         )}
+//       >
+//         <MapPin size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
+//         <input
+//           type="text"
+//           value={value}
+//           onChange={handleInputChange}
+//           onFocus={() => setIsFocused(true)}
+//           onBlur={() => {
+//             // Delay hiding suggestions to allow clicking on them
+//             setTimeout(() => setIsFocused(false), 150);
+//           }}
+//           placeholder={placeholder}
+//           className="flex-1 bg-transparent border-none outline-none text-neutral-800 placeholder:text-neutral-400"
+//         />
+//         {value && (
+//           <button
+//             onClick={handleClearInput}
+//             className="flex-shrink-0 text-neutral-400 hover:text-neutral-600 transition-colors"
+//           >
+//             <X size={16} />
+//           </button>
+//         )}
+//       </div>
+
+//       {/* Suggestions dropdown */}
+//       {isFocused && suggestions.length > 0 && (
+//         <div className="absolute z-10 w-full mt-1 bg-white border border-neutral-200 rounded-lg shadow-lg overflow-hidden animate-scale-in origin-top">
+//           <ul className="py-1 max-h-60 overflow-auto">
+//             {suggestions.map((suggestion, index) => (
+//               <li
+//                 key={index}
+//                 className="px-4 py-2 hover:bg-neutral-50 cursor-pointer transition-colors flex items-center"
+//                 onClick={() => handleSuggestionClick(suggestion)}
+//               >
+//                 <MapPin size={16} className="text-neutral-400 mr-2 flex-shrink-0" />
+//                 <span className="text-neutral-700">{suggestion}</span>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default LocationSearch;
+
+
+import { useState } from "react";
+import { MapPin, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface LocationSearchProps {
   placeholder: string;
@@ -10,38 +122,34 @@ interface LocationSearchProps {
   className?: string;
 }
 
-const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }: LocationSearchProps) => {
+const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }: LocationSearchProps) => {
   const [value, setValue] = useState(defaultValue);
+  const [suggestions, setSuggestions] = useState<{ display_name: string }[]>([]);
   const [isFocused, setIsFocused] = useState(false);
-  const [suggestions, setSuggestions] = useState<string[]>([]);
 
-  // Mock suggestions - in a real app, these would come from an API
-  const mockSuggestions = [
-    "Airport Terminal 1",
-    "Airport Terminal 2",
-    "Central Station",
-    "Downtown",
-    "Business District",
-    "Convention Center",
-    "Shopping Mall",
-    "Marina Bay Hotel",
-    "Grand Plaza"
-  ];
+  const fetchSuggestions = async (query: string) => {
+    if (!query.trim()) {
+      setSuggestions([]);
+      return;
+    }
+  
+    try {
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&countrycodes=IN&q=${encodeURIComponent(query)}`
+      );
+      const data = await response.json();
+      setSuggestions(data);
+    } catch (error) {
+      console.error("Error fetching location data:", error);
+    }
+  };
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setValue(newValue);
     onChange(newValue);
-
-    // Simple mock suggestion filtering
-    if (newValue.trim()) {
-      const filtered = mockSuggestions.filter(
-        suggestion => suggestion.toLowerCase().includes(newValue.toLowerCase())
-      );
-      setSuggestions(filtered);
-    } else {
-      setSuggestions([]);
-    }
+    fetchSuggestions(newValue);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -51,29 +159,21 @@ const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }:
   };
 
   const handleClearInput = () => {
-    setValue('');
-    onChange('');
+    setValue("");
+    onChange("");
     setSuggestions([]);
   };
 
   return (
     <div className={cn("relative", className)}>
-      <div
-        className={cn(
-          "flex items-center w-full px-4 py-3 rounded-lg border transition-all duration-200 bg-white",
-          isFocused ? "ring-2 ring-primary/20 border-primary/30" : "border-neutral-200 hover:border-neutral-300"
-        )}
-      >
+      <div className="flex items-center w-full px-4 py-3 rounded-lg border transition-all duration-200 bg-white border-neutral-200 hover:border-neutral-300">
         <MapPin size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
         <input
           type="text"
           value={value}
           onChange={handleInputChange}
           onFocus={() => setIsFocused(true)}
-          onBlur={() => {
-            // Delay hiding suggestions to allow clicking on them
-            setTimeout(() => setIsFocused(false), 150);
-          }}
+          onBlur={() => setTimeout(() => setIsFocused(false), 150)}
           placeholder={placeholder}
           className="flex-1 bg-transparent border-none outline-none text-neutral-800 placeholder:text-neutral-400"
         />
@@ -89,16 +189,16 @@ const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }:
 
       {/* Suggestions dropdown */}
       {isFocused && suggestions.length > 0 && (
-        <div className="absolute z-10 w-full mt-1 bg-white border border-neutral-200 rounded-lg shadow-lg overflow-hidden animate-scale-in origin-top">
+        <div className="absolute z-10 w-full mt-1 bg-white border border-neutral-200 rounded-lg shadow-lg overflow-hidden">
           <ul className="py-1 max-h-60 overflow-auto">
             {suggestions.map((suggestion, index) => (
               <li
                 key={index}
                 className="px-4 py-2 hover:bg-neutral-50 cursor-pointer transition-colors flex items-center"
-                onClick={() => handleSuggestionClick(suggestion)}
+                onClick={() => handleSuggestionClick(suggestion.display_name)}
               >
                 <MapPin size={16} className="text-neutral-400 mr-2 flex-shrink-0" />
-                <span className="text-neutral-700">{suggestion}</span>
+                <span className="text-neutral-700">{suggestion.display_name}</span>
               </li>
             ))}
           </ul>
@@ -109,3 +209,14 @@ const LocationSearch = ({ placeholder, defaultValue = '', onChange, className }:
 };
 
 export default LocationSearch;
+
+//use openstreetmap api to get the location suggestions
+//json response from openstreetmap api
+/*[
+  {
+    "display_name": "Mumbai, Maharashtra, India",
+    "lat": "19.0760",
+    "lon": "72.8777"
+  }
+]
+*/

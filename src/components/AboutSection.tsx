@@ -19,10 +19,10 @@ const AboutSection = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About KavinDropTaxi</h2>
             <p className="text-neutral-600 mb-6">
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nemo voluptate excepturi fuga assumenda aliquam officia animi. Cupiditate, vel quod?
+            At Kavin Drop Taxi, we are dedicated to providing safe, reliable, and affordable one-way taxi services across Tamil Nadu and beyond. Whether you need a ride for business, leisure, or emergency travel, we ensure a seamless and comfortable journey with our well-maintained fleet and professional drivers.
             </p>
             <p className="text-neutral-600 mb-6">
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam ab necessitatibus vel odit numquam unde assumenda voluptatibus? Odit id enim suscipit dicta modi totam laboriosam asperiores! Blanditiis doloribus nulla veniam.
+            With a strong focus on quality service and customer trust, we continue to expand our reach, offering premium taxi services tailored to your travel needs. Whether you're heading to the airport, a business meeting, or a weekend getaway, we ensure a smooth, worry-free journey. Your comfort is our mission, and we strive to exceed expectations with every ride!
             </p>
 
             <div className="grid grid-cols-2 gap-6 mt-8">
