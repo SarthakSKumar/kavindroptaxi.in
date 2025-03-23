@@ -95,7 +95,7 @@ const ContactSection = () => {
                     <h4 className="text-lg font-medium">Phone Numbers</h4>
                     <p className="text-neutral-600 mt-1">
                       Bookings: +91 9994680220 <br />
-                      Support: +91 9994680220
+
                     </p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const ContactSection = () => {
                     <h4 className="text-lg font-medium">Email Addresses</h4>
                     <p className="text-neutral-600 mt-1">
                       Bookings: bookings@premiumtaxi.com <br />
-                      Support: support@premiumtaxi.com
+            
                     </p>
                   </div>
                 </div>
