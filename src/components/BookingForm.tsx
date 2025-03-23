@@ -159,18 +159,25 @@ const BookingForm = () => {
             
             {/* Mobile Number */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-            <Phone className="text-neutral-400 w-5 h-5 mr-2" />
-            <input
-              type="tel"
-              placeholder="Mobile Number"
-              value={formData.mobile}
-              onChange={(e) => handleInputChange("mobile", e.target.value)}
-              pattern="[6-9]{1}[0-9]{9}" // Ensures valid Indian number
-              maxLength={10} // Limits input to 10 digits
-              required
-              className="flex-1 bg-transparent border-none outline-none"
-            />
-          </div>
+              <Phone className="text-neutral-400 w-5 h-5 mr-2" />
+              <span className="text-neutral-600 font-medium">+91</span>
+              <input
+                type="tel"
+                placeholder="Mobile Number"
+                value={formData.mobile}
+                onChange={(e) => {
+                  const input = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+                  if (input.length <= 10) {
+                    handleInputChange("mobile", input);
+                  }
+                }}
+                pattern="[6-9]{1}[0-9]{9}" // Ensures a valid Indian number
+                maxLength={10} // Limits input to 10 digits
+                required
+                className="flex-1 bg-transparent border-none outline-none pl-2"
+              />
+            </div>
+
 
             {/* <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Phone className="text-neutral-400 w-5 h-5 mr-2" />
@@ -271,12 +278,17 @@ const BookingForm = () => {
               </div>
               <div className="flex justify-between">
                 <span className="text-neutral-500">From</span>
-                <span className="font-medium">{formData.pickup}</span>
+                <span className="font-medium truncate max-w-[150px] overflow-hidden whitespace-nowrap">
+                  {formData.pickup}
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-neutral-500">To</span>
-                <span className="font-medium">{formData.destination}</span>
+                <span className="font-medium truncate max-w-[150px] overflow-hidden whitespace-nowrap">
+                  {formData.destination}
+                </span>
               </div>
+
               <div className="flex justify-between">
                 <span className="text-neutral-500">Date</span>
                 <span className="font-medium">{formData.date}</span>
