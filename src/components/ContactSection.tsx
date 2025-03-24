@@ -107,7 +107,7 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Email Addresses</h4>
                     <p className="text-neutral-600 mt-1">
-                      Bookings: bookings@premiumtaxi.com <br />
+                      Bookings: kavindroptaxi.in@gmail.com<br />
             
                     </p>
                   </div>
