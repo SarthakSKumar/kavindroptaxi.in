@@ -1,1 +1,1 @@
-https://github.com/instamobile/tinder-react-native.git
+
