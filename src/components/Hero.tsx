@@ -25,7 +25,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
 
       {/* Content container */}
-      <div className="relative max-w-7xl z-10 w-full px-4 md:px-12">
+      <div className="relative max-w-7xl z-10 w-full px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
 
           {/* Left Column - Text Content */}
@@ -84,26 +84,26 @@ const Hero = () => {
           <div className={cn(
             "w-auto md:w-1/3 transition-all duration-700 delay-300",
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-            "md:px-0  scale-75 md:scale-100" // Adds px-5 padding on smaller screens
+            "md:px-0  scale-75 md:scale-100"
           )}>
             <BookingForm />
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="  absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce ">
-        <p className="text-sm text-white mb-2">Scroll to explore</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
+{/* Scroll Indicator */}
+<div className="absolute bottom-8   transform -translate-x-1/2 flex flex-col items-center  text-center animate-bounce">
+  <p className="text-sm text-white mb-2">Scroll to explore</p>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-5 w-5 text-white mx-auto"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+  </svg>
+</div>
     </section>
   );
 };
