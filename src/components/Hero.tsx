@@ -25,12 +25,12 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
 
       {/* Content container */}
-      <div className="relative max-w-7xl z-10 w-full px-4 md:px-8">
+      <div className="relative max-w-7xl z-10 w-full px-4 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
 
           {/* Left Column - Text Content */}
           <div className={cn(
-            "flex flex-col space-y-6 w-full transition-all duration-700 delay-100",
+            "flex flex-col space-y-5 w-full transition-all duration-700 delay-100",
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
