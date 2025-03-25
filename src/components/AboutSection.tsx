@@ -27,8 +27,8 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="bg-white p-5 rounded-lg shadow-sm">
-                <div className="text-primary text-3xl font-bold mb-2">1000+</div>
-                <div className="text-neutral-800 font-medium">Happy Clients</div>
+                <div className="text-primary text-3xl font-bold mb-2">99%</div>
+                <div className="text-neutral-800 font-medium">Customer Satisfaction</div>
               </div>
               <div className="bg-white p-5 rounded-lg shadow-sm">
                 <div className="text-primary text-3xl font-bold mb-2">100%</div>

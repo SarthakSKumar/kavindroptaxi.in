@@ -130,7 +130,7 @@ const PopularDestinationSection = () => {
                                             ₹{dest.price}
                                         </div> */}
                                         <button
-                                        className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+                                        className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-yellow-200 transition-colors duration-200"
                                         onClick={() => window.open("https://wa.me/919994680220?text=Hello, I would like to enquire about your services.", "_blank")}>
                                         Enquire
                                         </button>

@@ -1,3 +1,6 @@
+import  gautham  from "../../public/gautham.jpg"
+import omkar from "../../public/omkar.jpg"
+import abhinav from "../../public/abhinav.jpg"
 
 const TestimonialsSection = () => {
   return (
@@ -15,7 +18,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
+                <div className="w-12 h-11 rounded-full bg-neutral-200">
+                  <img src={gautham} alt=""
+                  className="w-12 h-11 rounded-full"
+                   />
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold">Gautham</h4>
@@ -38,7 +45,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
+                <div className="w-12 h-11 rounded-full bg-neutral-200">
+                  <img src={omkar} alt=""
+                  className="w-12 h-11 rounded-full"
+                   />
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold">Omkar</h4>
@@ -61,7 +72,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
+                <div className="w-12 h-11 rounded-full bg-neutral-200">
+                  <img src={abhinav} alt=""
+                  className="w-12 h-11 rounded-full"
+                   />
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold">	Abhinav</h4>

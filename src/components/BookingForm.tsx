@@ -160,7 +160,7 @@ const BookingForm = () => {
             {/* Mobile Number */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Phone className="text-neutral-400 w-5 h-5 mr-2" />
-              <span className="text-neutral-600 font-medium">+91</span>
+              <span className="text-neutral-600 font-medium pr-1">+91</span>
               <input
                 type="tel"
                 placeholder="Mobile Number"

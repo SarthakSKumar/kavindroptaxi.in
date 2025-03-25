@@ -11,7 +11,7 @@ const cars = [
   {
     name: "Maruti Suzuki Swift Dzire",
     image: "https://i.ndtvimg.com/i/2017-06/maruti-suzuki-dzire-styling_827x510_81498479945.jpg",
-    description: "A compact sedan with great mileage and a smooth driving experience.",
+    description: "A compact sedan with great mileage.",
     features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
   },
   {
