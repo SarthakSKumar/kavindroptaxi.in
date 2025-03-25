@@ -1,6 +1,4 @@
-import  gautham  from "../../public/gautham.jpg"
-import omkar from "../../public/omkar.jpg"
-import abhinav from "../../public/abhinav.jpg"
+
 
 const TestimonialsSection = () => {
   return (
@@ -19,7 +17,7 @@ const TestimonialsSection = () => {
             <div className="flex items-center mb-6">
               <div className="mr-4">
                 <div className="w-12 h-11 rounded-full bg-neutral-200">
-                  <img src={gautham} alt=""
+                  <img src="/gautham.jpg" alt=""
                   className="w-12 h-11 rounded-full"
                    />
                 </div>
@@ -46,7 +44,7 @@ const TestimonialsSection = () => {
             <div className="flex items-center mb-6">
               <div className="mr-4">
                 <div className="w-12 h-11 rounded-full bg-neutral-200">
-                  <img src={omkar} alt=""
+                  <img src="/omkar.jpg" alt=""
                   className="w-12 h-11 rounded-full"
                    />
                 </div>
@@ -73,7 +71,7 @@ const TestimonialsSection = () => {
             <div className="flex items-center mb-6">
               <div className="mr-4">
                 <div className="w-12 h-11 rounded-full bg-neutral-200">
-                  <img src={abhinav} alt=""
+                  <img src="/abhinav.jpg" alt=""
                   className="w-12 h-11 rounded-full"
                    />
                 </div>

@@ -25,7 +25,7 @@ const ContactSection = () => {
                       type="text"
                       id="name"
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                      placeholder="your name"
+                      placeholder="Your name"
                     />
                   </div>
                   <div>
@@ -78,13 +78,21 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Our Location</h4>
                     <p className="text-neutral-600 mt-1">
-                    2/97 Pillayar Kovil Street Nadukkuppam post 
-                     <br />
-                     and village Arani Taluk
-                     <br />
-                     Tiruvannamalai district 606903 
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=2/97+Pillayar+Kovil+Street+Nadukkuppam+post+and+village+Arani+Taluk+Tiruvannamalai+district+606903"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-black-600 hover:underline"
+                      >
+                        2/97 Pillayar Kovil Street Nadukkuppam post
+                        <br />
+                        and village Arani Taluk
+                        <br />
+                        Tiruvannamalai district 606903
+                      </a>
                     </p>
                   </div>
+
                 </div>
 
                 <div className="flex items-start">
@@ -93,9 +101,10 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Phone Numbers</h4>
-                    <p className="text-neutral-600 mt-1">
-                      Bookings: +91 9994680220 <br />
-
+                    <p className="text-neutral-600 mt-1">                    
+                    <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800">
+                  +91 9994680220
+                </a>
                     </p>
                   </div>
                 </div>
@@ -115,7 +124,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-8 shadow-md">
+            {/* <div className="bg-white rounded-xl p-8 shadow-md">
               <h3 className="text-2xl font-semibold mb-6">Business Hours</h3>
 
               <div className="space-y-3">
@@ -132,7 +141,7 @@ const ContactSection = () => {
                   <span className="font-medium">24 hours</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -6,7 +6,10 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="relative">
-              <div className="bg-neutral-300 rounded-lg w-full h-96 md:h-[500px]"></div>
+              <div className="bg-neutral-300 rounded-lg w-full h-60 md:h-[440px]">
+                <img src="/hero2.jpg" alt=""  
+                className="h-fit"/>
+              </div>
               <div className="absolute -bottom-6 -right-6 bg-primary p-6 rounded-lg shadow-lg">
                 <div className="text-black text-center">
                   <div className="text-4xl font-bold">15+</div>
@@ -15,7 +18,6 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
-
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About KavinDropTaxi</h2>
             <p className="text-neutral-600 mb-6">

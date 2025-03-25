@@ -88,7 +88,7 @@ const destinations: Destination[] = [
 
 const PopularDestinationSection = () => {
     return (
-        <section id="popular" className="section-padding scroll-section bg-neutral-50">
+        <section id="popular" className="section-padding scroll-section bg-neutral-50 px-4">
             <div className="mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
