@@ -39,7 +39,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg text-white max-w-xl">
-              Experience a smooth and secure one-way drop taxi service with our affordable and convenient cab booking options.
+              Experience a smooth and secure drop taxi service with our affordable and convenient cab booking options.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
