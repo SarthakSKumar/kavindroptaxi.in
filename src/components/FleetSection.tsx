@@ -94,8 +94,8 @@ const FleetSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold mb-1">{car.name}</h3>
                 <p className="text-neutral-600 text-sm mb-2">{car.description}</p>
-                <p className="text-sm font-medium text-gray-800">Single Drop: <span className="text-primary">₹{car.pricing.SD}/km</span></p>
-                <p className="text-sm font-medium text-gray-800">Round Trip: <span className="text-primary">₹{car.pricing.RT}/km</span></p>
+                <p className="text-sm font-medium text-gray-800">Single Drop: <span className="text-black">₹{car.pricing.SD}/km</span></p>
+                <p className="text-sm font-medium text-gray-800">Round Trip: <span className="text-black">₹{car.pricing.RT}/km</span></p>
               </div>
             </div>
           ))}

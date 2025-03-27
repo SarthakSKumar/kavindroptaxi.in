@@ -35,7 +35,7 @@ const Hero = () => {
           )}>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               <span className="text-primary"> Fast and Reliable</span><br />
-              One-Way Taxi Service for you
+              Effortless Rides, Every Time
             </h1>
             
             <p className="text-lg text-white max-w-xl">

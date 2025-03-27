@@ -14,21 +14,21 @@ export type VehicleType = {
 const vehicles: VehicleType[] = [
   {
     id: 'suv1',
-    name: 'Toyota Innova single 20 RT 18',
+    name: 'Toyota Innova ',
     capacity: 7,
     image: '/vehicles/suv.jpg',
     description: 'Perfect for family road trips'
   },
   {
     id: 'suv2',
-    name: 'Toyota Innova Crysta single 22 RT',
+    name: 'Toyota Innova Crysta ',
     capacity: 7,
     image: '/vehicles/suv.jpg',
     description: 'Perfect for family road trips'
   },
   {
     id: 'suv3',
-    name: 'MUV single 19 RT 17',
+    name: 'MUV single ',
     capacity: 7,
     image: '/vehicles/suv.jpg',
     description: 'Perfect for family road trips'
