@@ -11,21 +11,21 @@ const cars = [
   },
   {
     name: "Maruti Suzuki Swift Dzire",
-    image: "https://i.ndtvimg.com/i/2017-06/maruti-suzuki-dzire-styling_827x510_81498479945.jpg",
+    image: "/dzire.webp",
     description: "A compact sedan with great mileage.",
     features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
     pricing: { SD: 14, RT: 13 },
   },
   {
     name: "Honda Amaze",
-    image: "https://www.carandbike.com/_next/image?url=https%3A%2F%2Fc.ndtvimg.com%2F2021-08%2Fk9k5jqa_honda-amaze-facelift-2021-_650x400_25_August_21.jpg&w=3840&q=75",
+    image: "/amaze.webp",
     description: "A stylish and fuel-efficient sedan offering a comfortable ride.",
     features: ["4 passengers", "2 luggage", "Spacious cabin", "ABS braking system"],
     pricing: { SD: 14, RT: 13 },
   },
   {
     name: "Maruti Suzuki Ciaz",
-    image: "https://images.cardekho.com/images/expert-review/Maruti-Suzuki-Ciaz/04.jpg",
+    image: "/ciaz.webp",
     description: "A premium sedan with luxury interiors and advanced features.",
     features: ["4 passengers", "3 luggage", "Premium interior", "Touchscreen infotainment"],
     pricing: { SD: 14, RT: 13 },
@@ -46,14 +46,14 @@ const cars = [
   },
   {
     name: "Mahindra Xylo",
-    image: "https://www.motorbeam.com/wp-content/uploads/2009/01/mahindra_xylo_india-1200x993.jpg",
+    image: "/Mahindra Xylo Exterior.jpg",
     description: "A multi-utility vehicle with ample space and durability.",
     features: ["7 passengers", "4 luggage", "Spacious interiors", "High ground clearance"],
     pricing: { SD: 19, RT: 17 },
   },
   {
     name: "Mahindra Marazzo",
-    image: "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20181116033915_Marazzo-front-static.jpg&w=700&c=1",
+    image: "/marazzo.webp",
     description: "A stylish and comfortable MUV with modern features.",
     features: ["7 passengers", "4 luggage", "Climate control", "Enhanced suspension"],
     pricing: { SD: 19, RT: 17 },
@@ -67,7 +67,7 @@ const cars = [
   },
   {
     name: "Toyota Rumion",
-    image: "https://imgd.aeplcdn.com/664x374/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80",
+    image: "/rumion.webp",
     description: "A practical and comfortable MUV with excellent performance.",
     features: ["7 passengers", "4 luggage", "Spacious interiors", "Reliable engine performance"],
     pricing: { SD: 19, RT: 17 },
@@ -94,7 +94,7 @@ const FleetSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold mb-1">{car.name}</h3>
                 <p className="text-neutral-600 text-sm mb-2">{car.description}</p>
-                <p className="text-sm font-medium text-gray-800">Single Drop: <span className="text-black">₹{car.pricing.SD}/km</span></p>
+                <p className="text-sm font-medium text-gray-800">Single Trip: <span className="text-black">₹{car.pricing.SD}/km</span></p>
                 <p className="text-sm font-medium text-gray-800">Round Trip: <span className="text-black">₹{car.pricing.RT}/km</span></p>
               </div>
             </div>
