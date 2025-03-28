@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { CalendarIcon, Clock, User, Phone, ChevronDown, Car } from 'lucide-react';
 import LocationSearch from './LocationSearch';
 import { cn } from '@/lib/utils';
-import DatePicker from "react-datepicker";
 
 export type VehicleType = {
   id: string;
@@ -28,6 +27,38 @@ const vehicles: VehicleType[] = [
     description: 'Perfect for family road trips'
   },
   {
+    id: 'suv3',
+    name: 'MUV single ',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },
+  {
+    id: 'suv4',
+    name: 'Mahindra Xylo',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },  {
+    id: 'suv5',
+    name: 'Mahindra Marrazo',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },  {
+    id: 'suv6',
+    name: 'Maruti Suzuki Ertiga ',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },  {
+    id: 'suv7',
+    name: 'Toyota Rumion',
+    capacity: 7,
+    image: '/vehicles/suv.jpg',
+    description: 'Perfect for family road trips'
+  },
+  {
     id: 'sedan',
     name: 'Toyota Etios',
     capacity: 4,
@@ -40,7 +71,21 @@ const vehicles: VehicleType[] = [
     capacity: 4,
     image: '/hero2.jpg',
     description: 'Economic and fuel efficient'
-  }
+  },
+  {
+    id: 'sedan3',
+    name: 'Honda Amaze',
+    capacity: 4,
+    image: '/vehicles/innova.jpg',
+    description: 'Spacious premium family vehicle'
+  },
+  {
+    id: 'sedan4',
+    name: 'Maruti Suzuki Ciaz',
+    capacity: 4,
+    image: '/vehicles/innova.jpg',
+    description: 'Spacious premium family vehicle'
+  },
 ];
 
 const BookingForm = () => {
@@ -54,6 +99,7 @@ const BookingForm = () => {
     time: '',
     selectedVehicle: null as VehicleType | null,
   });
+  const [isVehicleDropdownOpen, setIsVehicleDropdownOpen] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData({ ...formData, [field]: value });
@@ -79,12 +125,16 @@ const BookingForm = () => {
     setCurrentStep(3);
   };
 
-  const getMinTime = () => {
-    const today = new Date().toISOString().split('T')[0];
-    return formData.date === today
-      ? new Date().toTimeString().slice(0, 5)
-      : '00:00';
-  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isVehicleDropdownOpen) {
+        setIsVehicleDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isVehicleDropdownOpen]);
 
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden w-[450px]">
@@ -106,7 +156,7 @@ const BookingForm = () => {
                 className="flex-1 bg-transparent border-none outline-none"
               />
             </div>
-
+            
             {/* Mobile Number */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Phone className="text-neutral-400 w-5 h-5 mr-2" />
@@ -128,6 +178,18 @@ const BookingForm = () => {
               />
             </div>
 
+
+            {/* <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
+              <Phone className="text-neutral-400 w-5 h-5 mr-2" />
+              <input
+                type="tel"
+                placeholder="Mobile Number"
+                value={formData.mobile}
+                onChange={(e) => handleInputChange('mobile', e.target.value)}
+                className="flex-1 bg-transparent border-none outline-none"
+              />
+            </div> */}
+
             {/* Location Fields */}
             <LocationSearch
               placeholder="Enter pickup location"
@@ -143,31 +205,28 @@ const BookingForm = () => {
 
             {/* Date and Time */}
             <div className="grid grid-cols-2 gap-4">
-              {/* Date Picker */}
+  {/* Date Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
                 <CalendarIcon className="text-neutral-400 w-5 h-5 mr-2" />
                 <input
                   type="date"
                   value={formData.date}
                   onChange={(e) => handleInputChange('date', e.target.value)}
-                  min={new Date().toISOString().split('T')[0]} // Prevent past dates
+                  min={new Date().toISOString().split('T')[0]} // Restricts past dates
                   className="flex-1 bg-transparent border-none outline-none placeholder-neutral-200"
                 />
               </div>
 
               {/* Time Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-                <Clock className="text-neutral-400 w-5 h-5 mr-2" />
                 <input
                   type="time"
                   value={formData.time}
                   onChange={(e) => handleInputChange('time', e.target.value)}
-                  min={getMinTime()} // Prevent past time selection for today
                   className="flex-1 bg-transparent border-none outline-none"
                 />
               </div>
             </div>
-
             {/* Vehicle Selection */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Car className="text-neutral-400 w-5 h-5 mr-2" />
@@ -208,25 +267,87 @@ const BookingForm = () => {
 
         {currentStep === 2 && (
           <div className="space-y-4">
-            <div className="bg-neutral-50 p-4 rounded-lg">
+            <div className="bg-neutral-50 p-4 rounded-lg space-y-3">
               <div className="flex justify-between">
                 <span className="text-neutral-500">Name</span>
                 <span className="font-medium">{formData.name}</span>
               </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-500">Mobile</span>
+                <span className="font-medium">{formData.mobile}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-500">From</span>
+                <span className="font-medium truncate max-w-[150px] overflow-hidden whitespace-nowrap">
+                  {formData.pickup}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-500">To</span>
+                <span className="font-medium truncate max-w-[150px] overflow-hidden whitespace-nowrap">
+                  {formData.destination}
+                </span>
+              </div>
+
+              <div className="flex justify-between">
+                <span className="text-neutral-500">Date</span>
+                <span className="font-medium">{formData.date}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-500">Time</span>
+                <span className="font-medium">{formData.time}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-500">Vehicle</span>
+                <span className="font-medium">{formData.selectedVehicle?.name}</span>
+              </div>
             </div>
 
-            <button
-              onClick={handleConfirmBooking}
-              className="w-full py-3 rounded-full font-medium bg-primary text-neutral-800 hover:bg-primary/90 transition-colors"
-            >
-              Confirm Booking
-            </button>
+            <div className="flex gap-4">
+              <button
+                onClick={() => setCurrentStep(1)}
+                className="flex-1 py-3 rounded-full font-medium border border-neutral-200 hover:bg-neutral-50 transition-colors"
+              >
+                Back
+              </button>
+              <button
+                onClick={handleConfirmBooking}
+                className="flex-1 py-3 rounded-full font-medium bg-primary text-neutral-800 hover:bg-primary/90 transition-colors"
+              >
+                Confirm Booking
+              </button>
+            </div>
           </div>
         )}
 
         {currentStep === 3 && (
-          <div className="text-center">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
             <h3 className="text-xl font-semibold">Booking Confirmed!</h3>
+            <p className="text-neutral-600">
+              Thank you for choosing our service. Our executive will contact you shortly to confirm your booking details.
+            </p>
+            <button
+              onClick={() => {
+                setCurrentStep(1);
+                setFormData({
+                  name: '',
+                  mobile: '',
+                  pickup: '',
+                  destination: '',
+                  date: '',
+                  time: '',
+                  selectedVehicle: null,
+                });
+              }}
+              className="w-full py-3 rounded-full font-medium bg-primary text-neutral-800 hover:bg-primary/90 transition-colors mt-4"
+            >
+              Book Another Ride
+            </button>
           </div>
         )}
       </div>
