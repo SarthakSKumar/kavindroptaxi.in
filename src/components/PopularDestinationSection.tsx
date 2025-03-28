@@ -95,7 +95,7 @@ const PopularDestinationSection = () => {
                         Popular Drop Taxi destinations ⚡
                     </h2>
                     <p className="text-neutral-600 max-w-2xl mx-auto">
-                        Book your one-way taxi service to these popular destinations and enjoy comfortable, hassle-free journeys.
+                        Book your taxi service to these popular destinations and enjoy comfortable, hassle-free journeys.
                     </p>
                 </div>
 
