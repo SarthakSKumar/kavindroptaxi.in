@@ -115,6 +115,13 @@ const BookingForm = () => {
       formData.selectedVehicle;
   };
 
+  const getMinTime = () => {
+    const today = new Date().toISOString().split('T')[0];
+    return formData.date === today
+      ? new Date().toTimeString().slice(0, 5)
+      : '00:00';
+  };
+
   const handleContinue = () => {
     if (isStepOneValid()) {
       setCurrentStep(2);
@@ -139,7 +146,7 @@ const BookingForm = () => {
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden w-[450px]">
       <div className="bg-primary p-3 px-6 border-b border-neutral-100">
-        <h2 className="text-lg font-semibold text-neutral-800">Quick Booking</h2>
+        <h2 className="text-xl font-semibold text-neutral-800 ">Quick Booking</h2>
       </div>
 
       <div className="py-4 px-6">
@@ -153,14 +160,14 @@ const BookingForm = () => {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className="flex-1 bg-transparent border-none outline-none"
+                className="flex-1 bg-transparent border-none outline-none text-lg"
               />
             </div>
             
             {/* Mobile Number */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Phone className="text-neutral-400 w-5 h-5 mr-2" />
-              <span className="text-neutral-600 font-medium pr-1">+91</span>
+              <span className="text-neutral-600 font-medium pr-1 text-lg">+91</span>
               <input
                 type="tel"
                 placeholder="Mobile Number"
@@ -174,7 +181,7 @@ const BookingForm = () => {
                 pattern="[6-9]{1}[0-9]{9}" // Ensures a valid Indian number
                 maxLength={10} // Limits input to 10 digits
                 required
-                className="flex-1 bg-transparent border-none outline-none pl-2"
+                className="flex-1 bg-transparent border-none outline-none pl-2 text-lg"
               />
             </div>
 
@@ -195,12 +202,14 @@ const BookingForm = () => {
               placeholder="Enter pickup location"
               onChange={(value) => handleInputChange('pickup', value)}
               defaultValue={formData.pickup}
+              className='mb-4 text-lg'
             />
 
             <LocationSearch
               placeholder="Enter destination"
               onChange={(value) => handleInputChange('destination', value)}
               defaultValue={formData.destination}
+              className='mb-4 text-lg'
             />
 
             {/* Date and Time */}
@@ -210,21 +219,38 @@ const BookingForm = () => {
                 <CalendarIcon className="text-neutral-400 w-5 h-5 mr-2" />
                 <input
                   type="date"
+                  inputMode="numeric"
+                  value={formData.date}
+                  onChange={(e) => handleInputChange('date', e.target.value)}
+                  min={new Date().toISOString().split('T')[0]}
+                  className="flex-1 bg-transparent border-none outline-none placeholder-neutral-200"
+                />
+
+                {/* <input
+                  type="date"
                   value={formData.date}
                   onChange={(e) => handleInputChange('date', e.target.value)}
                   min={new Date().toISOString().split('T')[0]} // Restricts past dates
                   className="flex-1 bg-transparent border-none outline-none placeholder-neutral-200"
-                />
+                /> */}
               </div>
 
               {/* Time Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-                <input
+              <input
+                type="time"
+                inputMode="numeric"
+                value={formData.time}
+                onChange={(e) => handleInputChange('time', e.target.value)}
+                min={getMinTime()}
+                className="flex-1 bg-transparent border-none outline-none"
+              />
+                {/* <input
                   type="time"
                   value={formData.time}
                   onChange={(e) => handleInputChange('time', e.target.value)}
                   className="flex-1 bg-transparent border-none outline-none"
-                />
+                /> */}
               </div>
             </div>
             {/* Vehicle Selection */}
