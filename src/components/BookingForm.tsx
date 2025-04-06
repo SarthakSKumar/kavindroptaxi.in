@@ -1,92 +1,8 @@
 import { useState, useEffect } from 'react';
-import { CalendarIcon, Clock, User, Phone, ChevronDown, Car } from 'lucide-react';
+import { CalendarIcon, User, Phone, Car } from 'lucide-react';
 import LocationSearch from './LocationSearch';
 import { cn } from '@/lib/utils';
-
-export type VehicleType = {
-  id: string;
-  name: string;
-  capacity: number;
-  image: string;
-  description: string;
-};
-
-const vehicles: VehicleType[] = [
-  {
-    id: 'suv1',
-    name: 'Toyota Innova single 20 RT 18',
-    capacity: 7,
-    image: '/vehicles/suv.jpg',
-    description: 'Perfect for family road trips'
-  },
-  {
-    id: 'suv2',
-    name: 'Toyota Innova Crysta single 22 RT',
-    capacity: 7,
-    image: '/vehicles/suv.jpg',
-    description: 'Perfect for family road trips'
-  },
-  {
-    id: 'suv3',
-    name: 'MUV single 19 RT 17',
-    capacity: 7,
-    image: '/vehicles/suv.jpg',
-    description: 'Perfect for family road trips'
-  },
-  {
-    id: 'suv4',
-    name: 'Mahindra Xylo',
-    capacity: 7,
-    image: '/vehicles/suv.jpg',
-    description: 'Perfect for family road trips'
-  },  {
-    id: 'suv5',
-    name: 'Mahindra Marrazo',
-    capacity: 7,
-    image: '/vehicles/suv.jpg',
-    description: 'Perfect for family road trips'
-  },  {
-    id: 'suv6',
-    name: 'Maruti Suzuki Ertiga ',
-    capacity: 7,
-    image: '/vehicles/suv.jpg',
-    description: 'Perfect for family road trips'
-  },  {
-    id: 'suv7',
-    name: 'Toyota Rumion',
-    capacity: 7,
-    image: '/vehicles/suv.jpg',
-    description: 'Perfect for family road trips'
-  },
-  {
-    id: 'sedan',
-    name: 'Toyota Etios',
-    capacity: 4,
-    image: '/vehicles/sedan.jpg',
-    description: 'Comfortable for small groups'
-  },
-  {
-    id: 'sedan2',
-    name: 'Etios',
-    capacity: 4,
-    image: '/hero2.jpg',
-    description: 'Economic and fuel efficient'
-  },
-  {
-    id: 'sedan3',
-    name: 'Honda Amaze',
-    capacity: 4,
-    image: '/vehicles/innova.jpg',
-    description: 'Spacious premium family vehicle'
-  },
-  {
-    id: 'sedan4',
-    name: 'Maruti Suzuki Ciaz',
-    capacity: 4,
-    image: '/vehicles/innova.jpg',
-    description: 'Spacious premium family vehicle'
-  },
-];
+import { FleetInfo, fleet } from '@/constants/fleet';
 
 const BookingForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -97,7 +13,7 @@ const BookingForm = () => {
     destination: '',
     date: '',
     time: '',
-    selectedVehicle: null as VehicleType | null,
+    selectedVehicle: null as FleetInfo | null,
   });
   const [isVehicleDropdownOpen, setIsVehicleDropdownOpen] = useState(false);
 
@@ -156,7 +72,7 @@ const BookingForm = () => {
                 className="flex-1 bg-transparent border-none outline-none"
               />
             </div>
-            
+
             {/* Mobile Number */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Phone className="text-neutral-400 w-5 h-5 mr-2" />
@@ -178,18 +94,6 @@ const BookingForm = () => {
               />
             </div>
 
-
-            {/* <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-              <Phone className="text-neutral-400 w-5 h-5 mr-2" />
-              <input
-                type="tel"
-                placeholder="Mobile Number"
-                value={formData.mobile}
-                onChange={(e) => handleInputChange('mobile', e.target.value)}
-                className="flex-1 bg-transparent border-none outline-none"
-              />
-            </div> */}
-
             {/* Location Fields */}
             <LocationSearch
               placeholder="Enter pickup location"
@@ -205,7 +109,7 @@ const BookingForm = () => {
 
             {/* Date and Time */}
             <div className="grid grid-cols-2 gap-4">
-  {/* Date Picker */}
+              {/* Date Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
                 <CalendarIcon className="text-neutral-400 w-5 h-5 mr-2" />
                 <input
@@ -233,7 +137,7 @@ const BookingForm = () => {
               <select
                 value={formData.selectedVehicle?.id || ''}
                 onChange={(e) => {
-                  const vehicle = vehicles.find(v => v.id === e.target.value);
+                  const vehicle = fleet.find(v => v.id === Number(e.target.value));
                   setFormData(prev => ({
                     ...prev,
                     selectedVehicle: vehicle || null
@@ -242,9 +146,9 @@ const BookingForm = () => {
                 className="flex-1 bg-transparent border-none outline-none cursor-pointer"
               >
                 <option value="" className="text-sm">Select Vehicle Type</option>
-                {vehicles.map((vehicle) => (
+                {fleet.map((vehicle) => (
                   <option key={vehicle.id} value={vehicle.id} className="text-sm">
-                    {vehicle.name} ({vehicle.capacity} seater)
+                    {vehicle.name} ({vehicle.capacity} Seats)
                   </option>
                 ))}
               </select>
