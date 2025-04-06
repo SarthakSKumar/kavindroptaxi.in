@@ -141,14 +141,14 @@ const BookingForm = () => {
 
               {/* Time Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-              <input
-                type="time"
-                inputMode="numeric"
-                value={formData.time}
-                onChange={(e) => handleInputChange('time', e.target.value)}
-                min={getMinTime()}
-                className="flex-1 bg-transparent border-none outline-none"
-              />
+                <input
+                  type="time"
+                  inputMode="numeric"
+                  value={formData.time}
+                  onChange={(e) => handleInputChange('time', e.target.value)}
+                  min={getMinTime()}
+                  className="flex-1 bg-transparent border-none outline-none"
+                />
                 {/* <input
                   type="time"
                   value={formData.time}
