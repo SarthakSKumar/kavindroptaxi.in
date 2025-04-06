@@ -182,12 +182,12 @@ const dropCities = [
 
 const DropCitiesSection = () => {
     return (
-        <section id="cities" className="section-padding scroll-section">
+        <section id="cities" className="section-padding scroll-section px-5">
             <div className="">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Drop Taxi Cities 🌟</h2>
                     <p className="text-neutral-600 max-w-2xl mx-auto">
-                        Enjoy a hassle-free and secure one-way drop taxi service with our affordable and convenient cab booking options.
+                    Book your taxi to popular destinations and enjoy a smooth, hassle-free journey with comfort, reliability, and affordability.
                     </p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

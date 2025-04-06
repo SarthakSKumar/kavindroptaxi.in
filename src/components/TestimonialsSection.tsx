@@ -1,4 +1,5 @@
 
+
 const TestimonialsSection = () => {
   return (
     <section className="section-padding bg-neutral-50 scroll-section">
@@ -15,7 +16,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
+                <div className="w-12 h-11 rounded-full bg-neutral-200">
+                  <img src="/gautham.jpg" alt=""
+                  className="w-12 h-11 rounded-full"
+                   />
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold">Gautham</h4>
@@ -38,7 +43,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
+                <div className="w-12 h-11 rounded-full bg-neutral-200">
+                  <img src="/omkar.jpg" alt=""
+                  className="w-12 h-11 rounded-full"
+                   />
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold">Omkar</h4>
@@ -61,7 +70,11 @@ const TestimonialsSection = () => {
           <div className="bg-white rounded-xl p-8 shadow-md hover-lift">
             <div className="flex items-center mb-6">
               <div className="mr-4">
-                <div className="w-12 h-12 rounded-full bg-neutral-200"></div>
+                <div className="w-12 h-11 rounded-full bg-neutral-200">
+                  <img src="/abhinav.jpg" alt=""
+                  className="w-12 h-11 rounded-full"
+                   />
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold">	Abhinav</h4>

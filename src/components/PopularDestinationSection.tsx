@@ -88,14 +88,14 @@ const destinations: Destination[] = [
 
 const PopularDestinationSection = () => {
     return (
-        <section id="popular" className="section-padding scroll-section bg-neutral-50">
+        <section id="popular" className="section-padding scroll-section bg-neutral-50 px-4">
             <div className="mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         Popular Drop Taxi destinations ⚡
                     </h2>
                     <p className="text-neutral-600 max-w-2xl mx-auto">
-                        Book your one-way taxi service to these popular destinations and enjoy comfortable, hassle-free journeys.
+                        Book your taxi service to these popular destinations and enjoy comfortable, hassle-free journeys.
                     </p>
                 </div>
 
@@ -130,7 +130,7 @@ const PopularDestinationSection = () => {
                                             ₹{dest.price}
                                         </div> */}
                                         <button
-                                        className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+                                        className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-yellow-200 transition-colors duration-200"
                                         onClick={() => window.open("https://wa.me/919994680220?text=Hello, I would like to enquire about your services.", "_blank")}>
                                         Enquire
                                         </button>
