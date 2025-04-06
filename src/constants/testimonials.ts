@@ -14,7 +14,8 @@ export const testimonials: Testimonial[] = [
     role: "Business Executive",
     image: "/gautham.jpg",
     rating: 5,
-    review: "I rely on this service for all my business travel needs. The drivers are professional, the vehicles are immaculate, and they're always on time. Couldn't ask for more!"
+    review:
+      "I rely on this service for all my business travel needs. The drivers are professional, the vehicles are immaculate, and they're always on time. Couldn't ask for more!",
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ export const testimonials: Testimonial[] = [
     role: "Frequent Traveler",
     image: "/omkar.jpg",
     rating: 5,
-    review: "Their airport transfer service is fantastic. My flight was delayed by hours, but the driver tracked my flight and was waiting when I arrived. That's what I call great service!"
+    review:
+      "Their airport transfer service is fantastic. My flight was delayed by hours, but the driver tracked my flight and was waiting when I arrived. That's what I call great service!",
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ export const testimonials: Testimonial[] = [
     role: "Tourism Manager",
     image: "/abhinav.jpg",
     rating: 5,
-    review: "I regularly book their services for our VIP clients. The quality is consistent, the booking process is effortless, and the vehicles are top-notch. Highly recommended!"
+    review:
+      "I regularly book their services for our VIP clients. The quality is consistent, the booking process is effortless, and the vehicles are top-notch. Highly recommended!",
   },
   {
     id: 4,
@@ -38,7 +41,8 @@ export const testimonials: Testimonial[] = [
     role: "Wedding Planner",
     image: "/priya.jpg",
     rating: 5,
-    review: "Their fleet of luxury vehicles made our wedding arrangements perfect. The drivers were courteous and punctual. All our guests were impressed with the service!"
+    review:
+      "Their fleet of luxury vehicles made our wedding arrangements perfect. The drivers were courteous and punctual. All our guests were impressed with the service!",
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ export const testimonials: Testimonial[] = [
     role: "Corporate Manager",
     image: "/rajesh.jpg",
     rating: 5,
-    review: "We use their services for all our corporate events. The booking system is efficient, and their team is very professional. A trusted partner for our transportation needs."
-  }
+    review:
+      "We use their services for all our corporate events. The booking system is efficient, and their team is very professional. A trusted partner for our transportation needs.",
+  },
 ];
