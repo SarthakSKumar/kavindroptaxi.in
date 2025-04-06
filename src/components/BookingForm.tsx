@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { CalendarIcon, User, Phone, Car } from 'lucide-react';
 import LocationSearch from './LocationSearch';
 import { cn } from '@/lib/utils';
+import { bookingConfirmationFields } from '@/constants/form';
 import { FleetInfo, fleet } from '@/constants/fleet';
 
 const BookingForm = () => {
@@ -129,14 +130,6 @@ const BookingForm = () => {
                   min={new Date().toISOString().split('T')[0]}
                   className="flex-1 bg-transparent border-none outline-none placeholder-neutral-200"
                 />
-
-                {/* <input
-                  type="date"
-                  value={formData.date}
-                  onChange={(e) => handleInputChange('date', e.target.value)}
-                  min={new Date().toISOString().split('T')[0]} // Restricts past dates
-                  className="flex-1 bg-transparent border-none outline-none placeholder-neutral-200"
-                /> */}
               </div>
 
               {/* Time Picker */}
@@ -149,12 +142,6 @@ const BookingForm = () => {
                   min={getMinTime()}
                   className="flex-1 bg-transparent border-none outline-none"
                 />
-                {/* <input
-                  type="time"
-                  value={formData.time}
-                  onChange={(e) => handleInputChange('time', e.target.value)}
-                  className="flex-1 bg-transparent border-none outline-none"
-                /> */}
               </div>
             </div>
             {/* Vehicle Selection */}
@@ -198,39 +185,19 @@ const BookingForm = () => {
         {currentStep === 2 && (
           <div className="space-y-4">
             <div className="bg-neutral-50 p-4 rounded-lg space-y-3">
-              <div className="flex justify-between">
-                <span className="text-neutral-500">Name</span>
-                <span className="font-medium">{formData.name}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-500">Mobile</span>
-                <span className="font-medium">{formData.mobile}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-500">From</span>
-                <span className="font-medium truncate max-w-[150px] overflow-hidden whitespace-nowrap">
-                  {formData.pickup}
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-500">To</span>
-                <span className="font-medium truncate max-w-[150px] overflow-hidden whitespace-nowrap">
-                  {formData.destination}
-                </span>
-              </div>
-
-              <div className="flex justify-between">
-                <span className="text-neutral-500">Date</span>
-                <span className="font-medium">{formData.date}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-500">Time</span>
-                <span className="font-medium">{formData.time}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-500">Vehicle</span>
-                <span className="font-medium">{formData.selectedVehicle?.name}</span>
-              </div>
+              {bookingConfirmationFields.map((field) => (
+                <div key={field.key} className="flex justify-between">
+                  <span className="text-neutral-500">{field.label}</span>
+                  <span
+                    className={cn(
+                      "font-medium",
+                      field.isTruncated && " truncate max-w-[150px] overflow-hidden whitespace-nowrap"
+                    )}
+                  >
+                    {field.value(formData)}
+                  </span>
+                </div>
+              ))}
             </div>
 
             <div className="flex gap-4">
