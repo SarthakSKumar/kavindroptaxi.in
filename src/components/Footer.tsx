@@ -66,8 +66,8 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="text-primary mr-3 mt-1 flex-shrink-0" />
                 <span className="text-neutral-400">
-                2/97 Pillayar Kovil Street Nadukkuppam post and village Arani Taluk
-                Tiruvannamalai district 606903
+                  2/97 Pillayar Kovil Street Nadukkuppam post and village Arani Taluk
+                  Tiruvannamalai district 606903
                 </span>
               </li>
               <li className="flex items-center">
@@ -79,7 +79,7 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail size={18} className="text-primary mr-3 flex-shrink-0" />
                 <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-400 hover:text-white transition-colors">
-                kavindroptaxi.in@gmail.com
+                  kavindroptaxi.in@gmail.com
                 </a>
               </li>
             </ul>
@@ -88,7 +88,7 @@ const Footer = () => {
 
         <div className="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500 text-sm">
           <div>
-            <p>&copy; {new Date().getFullYear()} KavinDropTaxi. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Kavin Drop Taxi. All rights reserved.</p>
             <p className="text-xs text-neutral-700 mt-2">
               Developed and Maintained by <a href="https://sarthakskumar.com" className="underline hover:text-primary/50" target="_blank" rel="noopener noreferrer">Sarthak S Kumar</a>
             </p>

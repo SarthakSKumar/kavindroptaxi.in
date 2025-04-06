@@ -1,6 +1,3 @@
-import React from "react";
-import { Check } from "lucide-react";
-
 import { fleet, FleetInfo } from "@/constants/fleet";
 
 const FleetSection = () => {

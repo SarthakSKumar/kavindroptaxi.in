@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
 import { cn } from '@/lib/utils';
-import { MessageCircle, PhoneCall, CalendarCheck, Shield, Banknote } from 'lucide-react';
+import { PhoneCall, CalendarCheck, Shield, Banknote } from 'lucide-react';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,7 +37,7 @@ const Hero = () => {
               <span className="text-primary"> Fast and Reliable</span><br />
               Effortless Rides, Every Time
             </h1>
-            
+
             <p className="text-lg text-white max-w-xl">
               Experience a smooth and secure drop taxi service with our affordable and convenient cab booking options.
             </p>
@@ -91,19 +91,19 @@ const Hero = () => {
         </div>
       </div>
 
-{/* Scroll Indicator */}
-<div className="absolute bottom-8   transform -translate-x-1/2 flex flex-col items-center  text-center animate-bounce">
-  <p className="text-sm text-white mb-2">Scroll to explore</p>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5 text-white mx-auto"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-  </svg>
-</div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8   transform -translate-x-1/2 flex flex-col items-center  text-center animate-bounce">
+        <p className="text-sm text-white mb-2">Scroll to explore</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-white mx-auto"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
     </section>
   );
 };

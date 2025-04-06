@@ -101,10 +101,10 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Phone Numbers</h4>
-                    <p className="text-neutral-600 mt-1">                    
-                    <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800">
-                  +91 9994680220
-                </a>
+                    <p className="text-neutral-600 mt-1">
+                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800">
+                        +91 9994680220
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -117,31 +117,12 @@ const ContactSection = () => {
                     <h4 className="text-lg font-medium">Email Addresses</h4>
                     <p className="text-neutral-600 mt-1">
                       Bookings: kavindroptaxi.in@gmail.com<br />
-            
+
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* <div className="bg-white rounded-xl p-8 shadow-md">
-              <h3 className="text-2xl font-semibold mb-6">Business Hours</h3>
-
-              <div className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-neutral-600">Monday - Friday:</span>
-                  <span className="font-medium">24 hours</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-neutral-600">Saturday:</span>
-                  <span className="font-medium">24 hours</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-neutral-600">Sunday:</span>
-                  <span className="font-medium">24 hours</span>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

@@ -18,8 +18,8 @@ const TestimonialsSection = () => {
               <div className="mr-4">
                 <div className="w-12 h-11 rounded-full bg-neutral-200">
                   <img src="/gautham.jpg" alt=""
-                  className="w-12 h-11 rounded-full"
-                   />
+                    className="w-12 h-11 rounded-full"
+                  />
                 </div>
               </div>
               <div>
@@ -45,8 +45,8 @@ const TestimonialsSection = () => {
               <div className="mr-4">
                 <div className="w-12 h-11 rounded-full bg-neutral-200">
                   <img src="/omkar.jpg" alt=""
-                  className="w-12 h-11 rounded-full"
-                   />
+                    className="w-12 h-11 rounded-full"
+                  />
                 </div>
               </div>
               <div>
@@ -72,8 +72,8 @@ const TestimonialsSection = () => {
               <div className="mr-4">
                 <div className="w-12 h-11 rounded-full bg-neutral-200">
                   <img src="/abhinav.jpg" alt=""
-                  className="w-12 h-11 rounded-full"
-                   />
+                    className="w-12 h-11 rounded-full"
+                  />
                 </div>
               </div>
               <div>
