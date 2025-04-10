@@ -34,7 +34,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://i.ndtvimg.com/i/2017-06/maruti-suzuki-dzire-styling_827x510_81498479945.jpg",
+      "/dzire.webp",
     description: "A smooth sedan ride with great mileage and comfort.",
     features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
   },
@@ -45,7 +45,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://www.carandbike.com/_next/image?url=https%3A%2F%2Fc.ndtvimg.com%2F2021-08%2Fk9k5jqa_honda-amaze-facelift-2021-_650x400_25_August_21.jpg&w=3840&q=75",
+      "https://www.team-bhp.com/forum/attachments/official-new-car-reviews/2696890d1734033882-2024-honda-amaze-review-2024_honda_amaze_exterior_01.jpg",
     description:
       "A stylish and fuel-efficient sedan offering a comfortable ride.",
     features: [
@@ -62,7 +62,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://images.cardekho.com/images/expert-review/Maruti-Suzuki-Ciaz/04.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Suzuki_Ciaz_2015_in_Punta_del_Este.JPG",
     description: "A premium sedan with luxury interiors and advanced features.",
     features: [
       "4 passengers",
@@ -106,7 +106,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 19,
     roundTrip: 17,
     image:
-      "https://www.motorbeam.com/wp-content/uploads/2009/01/mahindra_xylo_india-1200x993.jpg",
+      "/xylo.png",
     description: "A multi-utility vehicle with ample space and durability.",
     features: [
       "7 passengers",
@@ -122,7 +122,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 19,
     roundTrip: 17,
     image:
-      "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20181116033915_Marazzo-front-static.jpg&w=700&c=1",
+      "/marazzo.avif",
     description: "A stylish and comfortable MUV with modern features.",
     features: [
       "7 passengers",
@@ -153,7 +153,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 19,
     roundTrip: 17,
     image:
-      "https://imgd.aeplcdn.com/664x374/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80",
+      "/rumion.jpg",
     description: "A practical and comfortable MUV with excellent performance.",
     features: [
       "7 passengers",
