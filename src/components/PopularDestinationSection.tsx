@@ -29,19 +29,18 @@ const PopularDestinationSection = () => {
                                         <p className="text-sm text-neutral-500 mb-4">
                                             Book your {dest.from} to {dest.to} and enjoy a comfortable journey
                                         </p>
-                                        <div className="flex items-center gap-6 text-sm text-neutral-600">
-                                            <div className="flex items-center gap-1.5 font-semibold">
+                                        <div className="flex gap-2 text-sm w-full text-neutral-600 flex-col xl:flex-row justify-between">
+                                            <div className="flex w-fit gap-1.5 font-semibold">
                                                 <MapPin className="w-4 h-4" />
                                                 <span>{dest.distance}</span>
                                             </div>
-                                            <div className="flex items-center gap-1.5 font-semibold">
+                                            <div className="flex item-start w-fit gap-1.5 font-semibold">
                                                 <Clock className="w-4 h-4" />
-                                                <span>{dest.duration}</span>
+                                                <span>{dest.duration}</ span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="mt-4 flex items-center justify-between">
-
                                         <button
                                             className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-yellow-200 transition-colors duration-200"
                                             onClick={() => window.open("https://wa.me/919994680220?text=Hello, I would like to enquire about your services.", "_blank")}>

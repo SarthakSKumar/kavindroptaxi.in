@@ -1,4 +1,5 @@
 import { fleet, FleetInfo } from "@/constants/fleet";
+import { User2Icon } from "lucide-react";
 
 const FleetSection = () => {
   return (
@@ -25,22 +26,7 @@ const FleetSection = () => {
                 <div className="flex items-center mb-2">
                   <span className="text-sm font-medium mr-1">Capacity:</span>
                   <div className="flex items-center">
-                    {[...Array(vehicle.capacity)].map((_, i) => (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="w-4 h-4 text-neutral-500"
-                      >
-                        <path d="M3.75 2.25a.75.75 0 000 1.5h12.5a.75.75 0 000-1.5H3.75z" />
-                        <path
-                          fillRule="evenodd"
-                          d="M2 6a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1zm0 5a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1zm0 5a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    ))}
+                    {vehicle.capacity} <User2Icon className="w-4 h-4 text-neutral-800" />
                   </div>
                 </div>
                 <p className="text-neutral-600 text-sm mb-2">
@@ -49,7 +35,7 @@ const FleetSection = () => {
                 <p className="text-neutral-600 text-sm mb-2">
                   Round Trip: <span className="font-semibold">₹{vehicle.roundTrip} per km</span>
                 </p>
-                <p className="text-xs text-neutral-300">Additional driver charges applicable.</p>
+                <p className="text-xs text-neutral-400">Additional driver charges applicable.</p>
               </div>
             </div>
           ))}
