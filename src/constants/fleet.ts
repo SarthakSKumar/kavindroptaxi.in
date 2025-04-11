@@ -119,7 +119,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 17,
-    image: "/marazzo.avif",
+    image: "/marazzo.webp",
     description: "A stylish and comfortable MUV with modern features.",
     features: [
       "7 passengers",
