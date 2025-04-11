@@ -18,7 +18,6 @@ const TestimonialsSection = () => {
     setActiveIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
-  // Group testimonials into pairs
   const testimonialPairs = [];
   for (let i = 0; i < testimonials.length; i += 2) {
     testimonialPairs.push(testimonials.slice(i, i + 2));
