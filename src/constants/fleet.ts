@@ -17,7 +17,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20171208103441_Toyota-Etios-front.jpg&w=700&c=1",
+      "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20171208103441_Toyota-Etios-front.webp&w=700&c=1",
     description:
       "A reliable and comfortable sedan, perfect for city and highway travel.",
     features: [
@@ -33,8 +33,7 @@ export const fleet: FleetInfo[] = [
     capacity: 4,
     singleTrip: 14,
     roundTrip: 13,
-    image:
-      "/dzire.webp",
+    image: "/dzire.webp",
     description: "A smooth sedan ride with great mileage and comfort.",
     features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
   },
@@ -45,7 +44,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://www.team-bhp.com/forum/attachments/official-new-car-reviews/2696890d1734033882-2024-honda-amaze-review-2024_honda_amaze_exterior_01.jpg",
+      "https://www.team-bhp.com/forum/attachments/official-new-car-reviews/2696890d1734033882-2024-honda-amaze-review-2024_honda_amaze_exterior_01.webp",
     description:
       "A stylish and fuel-efficient sedan offering a comfortable ride.",
     features: [
@@ -62,7 +61,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/8/87/Suzuki_Ciaz_2015_in_Punta_del_Este.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Suzuki_Ciaz_2015_in_Punta_del_Este.webp",
     description: "A premium sedan with luxury interiors and advanced features.",
     features: [
       "4 passengers",
@@ -78,7 +77,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 20,
     roundTrip: 18,
     image:
-      "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20111217093444_5.jpg&w=700&c=1",
+      "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20111217093444_5.webp&w=700&c=1",
     description: "A spacious and powerful SUV ideal for long-distance travel.",
     features: ["7 passengers", "5 luggage", "Comfort seating", "Rear AC vents"],
   },
@@ -89,7 +88,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 22,
     roundTrip: 21,
     image:
-      "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/1.75Ltoyotainnovarystaaimg.jpg",
+      "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/1.75Ltoyotainnovarystaaimg.webp",
     description:
       "A premium version of the Innova, with added luxury and comfort.",
     features: [
@@ -105,8 +104,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 17,
-    image:
-      "/xylo.png",
+    image: "/xylo.webp",
     description: "A multi-utility vehicle with ample space and durability.",
     features: [
       "7 passengers",
@@ -121,8 +119,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 17,
-    image:
-      "/marazzo.avif",
+    image: "/marazzo.avif",
     description: "A stylish and comfortable MUV with modern features.",
     features: [
       "7 passengers",
@@ -137,7 +134,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 17,
-    image: "https://i.ytimg.com/vi/pEcguEAAlAE/maxresdefault.jpg",
+    image: "https://i.ytimg.com/vi/pEcguEAAlAE/maxresdefault.webp",
     description: "A budget-friendly and efficient MUV for family trips.",
     features: [
       "7 passengers",
@@ -152,8 +149,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 17,
-    image:
-      "/rumion.jpg",
+    image: "/rumion.webp",
     description: "A practical and comfortable MUV with excellent performance.",
     features: [
       "7 passengers",

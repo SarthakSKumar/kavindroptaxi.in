@@ -36,7 +36,7 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90">
-          <img src="/Logo.png" className="w-40" alt="Logo" />
+          <img src="/Logo.webp" className="w-40" alt="Logo" />
         </a>
 
         {/* Desktop Navigation */}

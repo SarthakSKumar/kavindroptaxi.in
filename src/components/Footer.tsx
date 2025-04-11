@@ -13,7 +13,7 @@ const Footer = () => {
               href="/"
               className="text-2xl font-semibold tracking-tight text-foreground transition-opacity hover:opacity-90"
             >
-              <img src="/Logo.png" className="w-44" />
+              <img src="/Logo.webp" className="w-44" />
             </a>
             <p className="text-neutral-400 my-8">
               Experience the perfect blend of comfort, reliability, and style with our premium taxi service. Available 24/7 for your convenience.

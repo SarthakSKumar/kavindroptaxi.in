@@ -50,7 +50,7 @@ export const dropCities: DropCity[] = [
   },
   {
     name: "Madurai",
-    src: "https://images.ctfassets.net/hkv6akvsgg6u/1CYLlX6zchayL2dokBDo2j/5b89e4845fa371a0119c6ea27afc5eaf/image__2_.jpg",
+    src: "https://images.ctfassets.net/hkv6akvsgg6u/1CYLlX6zchayL2dokBDo2j/5b89e4845fa371a0119c6ea27afc5eaf/image__2_.webp",
   },
   {
     name: "Nagapattinam",
@@ -102,7 +102,7 @@ export const dropCities: DropCity[] = [
   },
   {
     name: "Thiruvarur",
-    src: "https://images.ctfassets.net/hkv6akvsgg6u/uXxjoVGR1rzOVkHdS5BGr/f5daaec48a3b3af5a7bf53ed0b221137/image__7_.jpg?",
+    src: "https://images.ctfassets.net/hkv6akvsgg6u/uXxjoVGR1rzOVkHdS5BGr/f5daaec48a3b3af5a7bf53ed0b221137/image__7_.webp?",
   },
   {
     name: "Thoothukkudi",
@@ -110,7 +110,7 @@ export const dropCities: DropCity[] = [
   },
   {
     name: "Trichy",
-    src: "https://images.ctfassets.net/hkv6akvsgg6u/7MJgZy1gRQ3p2HjYb8uBOz/3a0f6a1ab49fcfcaba593418d77d2eaf/image__4_.jpg",
+    src: "https://images.ctfassets.net/hkv6akvsgg6u/7MJgZy1gRQ3p2HjYb8uBOz/3a0f6a1ab49fcfcaba593418d77d2eaf/image__4_.webp",
   },
   {
     name: "Tirunelveli",
