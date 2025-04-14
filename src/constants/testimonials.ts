@@ -39,7 +39,7 @@ export const testimonials: Testimonial[] = [
     id: 4,
     name: "Priya Shah",
     role: "Wedding Planner",
-    image: "/priya.webp",
+    image: "/priya.jpg",
     rating: 5,
     review:
       "Their fleet of luxury vehicles made our wedding arrangements perfect. The drivers were courteous and punctual. All our guests were impressed with the service!",
