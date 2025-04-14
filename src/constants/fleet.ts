@@ -17,7 +17,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20171208103441_Toyota-Etios-front.webp&w=700&c=1",
+      "/etios.webp",
     description:
       "A reliable and comfortable sedan, perfect for city and highway travel.",
     features: [
@@ -61,7 +61,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 14,
     roundTrip: 13,
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/8/87/Suzuki_Ciaz_2015_in_Punta_del_Este.webp",
+      "/ciaz.webp",
     description: "A premium sedan with luxury interiors and advanced features.",
     features: [
       "4 passengers",
@@ -77,7 +77,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 20,
     roundTrip: 18,
     image:
-      "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20111217093444_5.webp&w=700&c=1",
+      "https://www.jcrcab.com/wp-content/uploads/2017/12/INNOVE.jpg",
     description: "A spacious and powerful SUV ideal for long-distance travel.",
     features: ["7 passengers", "5 luggage", "Comfort seating", "Rear AC vents"],
   },
@@ -88,7 +88,7 @@ export const fleet: FleetInfo[] = [
     singleTrip: 22,
     roundTrip: 21,
     image:
-      "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/1.75Ltoyotainnovarystaaimg.webp",
+      "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/1.75Ltoyotainnovarystaaimg.jpg",
     description:
       "A premium version of the Innova, with added luxury and comfort.",
     features: [
@@ -134,7 +134,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 17,
-    image: "https://i.ytimg.com/vi/pEcguEAAlAE/maxresdefault.webp",
+    image: "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/IMG20220901WA0009.jpg",
     description: "A budget-friendly and efficient MUV for family trips.",
     features: [
       "7 passengers",
