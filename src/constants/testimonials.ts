@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
     id: 3,
     name: "Abhinav",
     role: "Tourism Manager",
-    image: "/abhinav.webp",
+    image: "images/users/abhinav.webp",
     rating: 5,
     review:
       "I regularly book their services for our VIP clients. The quality is consistent, the booking process is effortless, and the vehicles are top-notch. Highly recommended!",
@@ -39,7 +39,7 @@ export const testimonials: Testimonial[] = [
     id: 4,
     name: "Priya Shah",
     role: "Wedding Planner",
-    image: "/priya.jpg",
+    image: "images/users/priya.jpg",
     rating: 5,
     review:
       "Their fleet of luxury vehicles made our wedding arrangements perfect. The drivers were courteous and punctual. All our guests were impressed with the service!",
@@ -48,7 +48,7 @@ export const testimonials: Testimonial[] = [
     id: 5,
     name: "Rajesh Kumar",
     role: "Corporate Manager",
-    image: "/rajesh.webp",
+    image: "images/users/rajesh.webp",
     rating: 5,
     review:
       "We use their services for all our corporate events. The booking system is efficient, and their team is very professional. A trusted partner for our transportation needs.",

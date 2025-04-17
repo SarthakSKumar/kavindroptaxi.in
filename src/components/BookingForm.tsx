@@ -170,6 +170,9 @@ const BookingForm = () => {
             <button
               onClick={handleContinue}
               disabled={!isStepOneValid()}
+              type="button"
+              id="continue"
+              aria-label="Continue to Booking Confirmation"
               className={cn(
                 "w-full py-3 rounded-full font-medium transition-colors mt-4",
                 isStepOneValid()
@@ -202,6 +205,9 @@ const BookingForm = () => {
 
             <div className="flex gap-4">
               <button
+                type="button"
+                id="back"
+                aria-label="Go Back to Booking Details"
                 onClick={() => setCurrentStep(1)}
                 className="flex-1 py-3 rounded-full font-medium border border-neutral-200 hover:bg-neutral-50 transition-colors"
               >
@@ -209,6 +215,9 @@ const BookingForm = () => {
               </button>
               <button
                 onClick={handleConfirmBooking}
+                type="button"
+                id="confirm"
+                aria-label="Confirm Booking"
                 className="flex-1 py-3 rounded-full font-medium bg-primary text-neutral-800 hover:bg-primary/90 transition-colors"
               >
                 Confirm Booking
@@ -229,6 +238,9 @@ const BookingForm = () => {
               Thank you for choosing our service. Our executive will contact you shortly to confirm your booking details.
             </p>
             <button
+              type="button"
+              id="book-another-ride"
+              aria-label="Book Another Ride"
               onClick={() => {
                 setCurrentStep(1);
                 setFormData({

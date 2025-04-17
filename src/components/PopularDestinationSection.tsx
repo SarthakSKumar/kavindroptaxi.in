@@ -42,6 +42,8 @@ const PopularDestinationSection = () => {
                                     </div>
                                     <div className="mt-4 flex items-center justify-between">
                                         <button
+                                        type="button"
+                                        aria-label='Enquire Now'
                                             className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-yellow-200 transition-colors duration-200"
                                             onClick={() => window.open("https://wa.me/919994680220?text=Hello, I would like to enquire about your services.", "_blank")}>
                                             Enquire

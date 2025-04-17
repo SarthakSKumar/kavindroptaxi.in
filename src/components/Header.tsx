@@ -36,7 +36,9 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90">
-          <img src="/Logo.webp" className="w-40" alt="Logo" />
+          <img src="/Logo.webp" className="w-40" alt="Logo"
+            fetchPriority="high"
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -66,6 +68,8 @@ const Header = () => {
           onClick={toggleMobileMenu}
           className="p-2 md:hidden text-foreground"
           aria-label="Toggle menu"
+          id="mobile-menu-toggle"
+          type="button"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -82,6 +86,9 @@ const Header = () => {
         {/* Close Button */}
         <button
           onClick={toggleMobileMenu}
+          id="mobile-menu-close"
+          type="button"
+          aria-labelledby='mobile-menu-toggle'
           className="absolute top-5 left-5 p-2 text-gray-700 hover:text-black"
           aria-label="Close menu"
         >

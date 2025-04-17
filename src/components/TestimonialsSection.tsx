@@ -46,6 +46,9 @@ const TestimonialsSection = () => {
               setIsAutoplay(false);
               prevSlide();
             }}
+            type="button"
+            id="prev"
+            aria-label="Previous Slide"
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 p-2 rounded-full bg-white shadow-md hover:bg-neutral-50 transition-colors"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -56,6 +59,9 @@ const TestimonialsSection = () => {
               setIsAutoplay(false);
               nextSlide();
             }}
+            type="button"
+            id="next"
+            aria-label="Next Slide"
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 p-2 rounded-full bg-white shadow-md hover:bg-neutral-50 transition-colors"
           >
             <ChevronRight className="w-6 h-6" />
@@ -111,6 +117,9 @@ const TestimonialsSection = () => {
           <div className="flex justify-center mt-8 gap-2">
             {[...Array(totalSlides)].map((_, index) => (
               <button
+                type="button"
+                aria-label={`Slide ${index + 1}`}
+                id={`dot-${index}`}
                 key={index}
                 onClick={() => {
                   setIsAutoplay(false);

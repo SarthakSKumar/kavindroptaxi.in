@@ -59,7 +59,10 @@ const ContactSection = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="w-full py-3 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors">
+                <button
+                  id="submit"
+                  aria-label="Submit Form"
+                  type="submit" className="w-full py-3 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors">
                   Send Message
                 </button>
               </form>

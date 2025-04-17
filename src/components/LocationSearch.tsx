@@ -67,6 +67,9 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
         {value && (
           <button
             onClick={handleClearInput}
+            type="button"
+            aria-label="Clear input"
+            
             className="flex-shrink-0 text-neutral-400 hover:text-neutral-600 transition-colors"
           >
             <X size={16} />

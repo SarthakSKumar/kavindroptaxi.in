@@ -74,6 +74,7 @@ export const fleet: FleetInfo[] = [
     id: 5,
     name: "Toyota Innova",
     capacity: 7,
+    
     singleTrip: 20,
     roundTrip: 18,
     image:
