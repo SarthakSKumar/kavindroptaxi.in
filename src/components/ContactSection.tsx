@@ -23,6 +23,7 @@ const ContactSection = () => {
                     <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
                     <input
                       type="text"
+                      name="name"
                       id="name"
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
                       placeholder="Your name"
@@ -32,6 +33,7 @@ const ContactSection = () => {
                     <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
                     <input
                       type="email"
+                      name="email"
                       id="email"
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
                       placeholder="name@example.com"
@@ -44,6 +46,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     id="subject"
+                    name="subject"
                     className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     placeholder="Booking inquiry"
                   />
@@ -105,7 +108,8 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Phone Numbers</h4>
                     <p className="text-neutral-600 mt-1">
-                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800">
+                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800" aria-label="Call Us"
+                        rel="noopener noreferrer">
                         +91 9994680220
                       </a>
                     </p>

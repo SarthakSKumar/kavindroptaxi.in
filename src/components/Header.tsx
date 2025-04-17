@@ -35,8 +35,9 @@ const Header = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90">
-          <img src="/Logo.webp" className="w-40" alt="Logo"
+        <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90"
+          aria-label="Kavin Drop Taxi">
+          <img src="/Logo.webp" className="w-40" alt="Kavin Drop Taxi"
             fetchPriority="high"
           />
         </a>
@@ -108,7 +109,7 @@ const Header = () => {
           ))}
         </nav>
       </div>
-    </header>
+    </header >
   );
 };
 

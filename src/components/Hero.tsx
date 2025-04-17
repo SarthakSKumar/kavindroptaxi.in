@@ -43,7 +43,8 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="tel: 9994680220" className="flex items-center gap-2.5 font-semibold px-5 py-2 rounded-full bg-primary text-black transition hover:shadow-lg hover:bg-primary/90">
+              <a
+                aria-label="Contact Us" href="tel: 9994680220" className="flex items-center gap-2.5 font-semibold px-5 py-2 rounded-full bg-primary text-black transition hover:shadow-lg hover:bg-primary/90">
                 <PhoneCall className="w-5 h-5" /> +91 9994680220
               </a>
               <a

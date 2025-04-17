@@ -57,6 +57,7 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
         <MapPin size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
         <input
           type="text"
+          name="location"
           value={value}
           onChange={handleInputChange}
           onFocus={() => setIsFocused(true)}
@@ -69,7 +70,7 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
             onClick={handleClearInput}
             type="button"
             aria-label="Clear input"
-            
+
             className="flex-shrink-0 text-neutral-400 hover:text-neutral-600 transition-colors"
           >
             <X size={16} />

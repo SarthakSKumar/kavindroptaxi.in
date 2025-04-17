@@ -74,6 +74,7 @@ const BookingForm = () => {
               <User className="text-neutral-400 w-5 h-5 mr-2" />
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
@@ -87,6 +88,7 @@ const BookingForm = () => {
               <span className="text-neutral-600 font-medium pr-1 text-lg">+91</span>
               <input
                 type="tel"
+                name="mobile"
                 placeholder="Mobile Number"
                 value={formData.mobile}
                 onChange={(e) => {
@@ -124,6 +126,7 @@ const BookingForm = () => {
                 <CalendarIcon className="text-neutral-400 w-5 h-5 mr-2" />
                 <input
                   type="date"
+                  name="date"
                   inputMode="numeric"
                   value={formData.date}
                   onChange={(e) => handleInputChange('date', e.target.value)}
@@ -136,6 +139,7 @@ const BookingForm = () => {
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
                 <input
                   type="time"
+                  name="time"
                   inputMode="numeric"
                   value={formData.time}
                   onChange={(e) => handleInputChange('time', e.target.value)}

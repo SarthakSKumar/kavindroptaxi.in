@@ -15,23 +15,33 @@ const Footer = () => {
             >
               <img src="/Logo.webp" className="w-44"
                 fetchPriority="high"
+                alt="Kavin Drop Taxi Logo"
               />
             </a>
             <p className="text-neutral-400 my-8">
               Experience the perfect blend of comfort, reliability, and style with our premium taxi service. Available 24/7 for your convenience.
             </p>
             {/* <div className="flex space-x-4">
-              <a href="#" className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
+              <a href="#"
+                aria-label="Facebook"
+               className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
                 <Facebook size={16} />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
+              <a href="#"
+                aria-label="Twitter"
+               className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
                 <Twitter size={16} />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
+              <a href="#"
+                aria-label="Instagram"
+               className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
                 <Instagram size={16} />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
-                <Linkedin size={16} />
+              <a href="#"
+                aria-label="LinkedIn"
+               className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center transition-colors hover:bg-primary">
+                <Linkedin size={16}
+                />
               </a>
             </div> */}
           </div>
@@ -41,19 +51,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-neutral-400 hover:text-primary transition-colors">Home</a>
+                <a href="#" className="text-neutral-400 hover:text-primary transition-colors" aria-label="Home">Home</a>
               </li>
               {/* <li>
                 <a href="#services" className="text-neutral-400 hover:text-primary transition-colors">Services</a>
               </li> */}
               <li>
-                <a href="#fleet" className="text-neutral-400 hover:text-primary transition-colors">Our Fleet</a>
+                <a href="#fleet" className="text-neutral-400 hover:text-primary transition-colors" aria-label="Our Fleet" >Our Fleet</a>
               </li>
               <li>
-                <a href="#about" className="text-neutral-400 hover:text-primary transition-colors">About Us</a>
+                <a href="#about" className="text-neutral-400 hover:text-primary transition-colors" aria-label="About Us">About Us</a>
               </li>
               <li>
-                <a href="#contact" className="text-neutral-400 hover:text-primary transition-colors">Contact</a>
+                <a href="#contact" className="text-neutral-400 hover:text-primary transition-colors" aria-label="Contact">Contact</a>
               </li>
               {/* <li>
                 <a href="#" className="text-neutral-400 hover:text-primary transition-colors">Terms & Conditions</a>
@@ -74,13 +84,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="text-primary mr-3 flex-shrink-0" />
-                <a href="tel:+919994680220" className="text-neutral-400 hover:text-white transition-colors">
+                <a href="tel:+919994680220" className="text-neutral-400 hover:text-white transition-colors" aria-label="Contact Us">
                   +91 9994680220
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-primary mr-3 flex-shrink-0" />
-                <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-400 hover:text-white transition-colors">
+                <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-400 hover:text-white transition-colors" aria-label="Email Us">
                   kavindroptaxi.in@gmail.com
                 </a>
               </li>
@@ -91,9 +101,9 @@ const Footer = () => {
         <div className="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500 text-sm">
           <div>
             <p>&copy; {new Date().getFullYear()} Kavin Drop Taxi. All rights reserved.</p>
-            <p className="text-xs text-neutral-700 mt-2">
+            {/* <p className="text-xs text-neutral-400 mt-2">
               Developed and Maintained by <a href="https://sarthakskumar.com" className="underline hover:text-primary/50" target="_blank" rel="noopener noreferrer">Sarthak S Kumar</a>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
