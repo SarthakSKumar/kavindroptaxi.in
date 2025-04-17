@@ -152,6 +152,7 @@ const BookingForm = () => {
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Car className="text-neutral-400 w-5 h-5 mr-2" />
               <select
+                aria-labelledby='Vehicle Select'
                 value={formData.selectedVehicle?.id || ''}
                 onChange={(e) => {
                   const vehicle = fleet.find(v => v.id === Number(e.target.value));

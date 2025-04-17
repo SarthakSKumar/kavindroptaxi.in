@@ -82,7 +82,7 @@ const ContactSection = () => {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-medium">Our Location</h4>
+                    <span className="text-lg font-medium">Our Location</span>
                     <p className="text-neutral-600 mt-1">
                       <a
                         href="https://www.google.com/maps/search/?api=1&query=2/97+Pillayar+Kovil+Street+Nadukkuppam+post+and+village+Arani+Taluk+Tiruvannamalai+district+606903"
@@ -106,7 +106,7 @@ const ContactSection = () => {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-medium">Phone Numbers</h4>
+                    <span className="text-lg font-medium">Phone Numbers</span>
                     <p className="text-neutral-600 mt-1">
                       <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800" aria-label="Call Us"
                         rel="noopener noreferrer">
@@ -121,7 +121,7 @@ const ContactSection = () => {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-medium">Email Addresses</h4>
+                    <span className="text-lg font-medium">Email Addresses</span>
                     <p className="text-neutral-600 mt-1">
                       Bookings: kavindroptaxi.in@gmail.com<br />
 

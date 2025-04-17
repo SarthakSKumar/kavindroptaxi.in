@@ -48,7 +48,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <span className="text-lg font-semibold mb-6">Quick Links</span>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-neutral-400 hover:text-primary transition-colors" aria-label="Home">Home</a>
@@ -73,7 +73,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+            <span className="text-lg font-semibold mb-6">Contact Us</span>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin size={18} className="text-primary mr-3 mt-1 flex-shrink-0" />

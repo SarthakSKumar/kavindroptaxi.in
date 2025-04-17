@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
     id: 1,
     name: "Gautham",
     role: "Business Executive",
-    image: "/gautham.webp",
+    image: "images/users/gautham.webp",
     rating: 5,
     review:
       "I rely on this service for all my business travel needs. The drivers are professional, the vehicles are immaculate, and they're always on time. Couldn't ask for more!",
@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
     id: 2,
     name: "Omkar",
     role: "Frequent Traveler",
-    image: "/omkar.webp",
+    image: "images/users/omkar.webp",
     rating: 5,
     review:
       "Their airport transfer service is fantastic. My flight was delayed by hours, but the driver tracked my flight and was waiting when I arrived. That's what I call great service!",

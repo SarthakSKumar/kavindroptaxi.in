@@ -35,7 +35,7 @@ const FleetSection = () => {
                 <p className="text-neutral-600 text-sm mb-2">
                   Round Trip: <span className="font-semibold">₹{vehicle.roundTrip} per km</span>
                 </p>
-                <p className="text-xs text-neutral-400">Additional driver charges (bata) of ₹400 applicable.</p>
+                <p className="text-xs text-neutral-400">Excluding driver charges (bata) of ₹400</p>
               </div>
             </div>
           ))}
