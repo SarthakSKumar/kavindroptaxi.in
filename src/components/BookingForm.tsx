@@ -75,6 +75,7 @@ const BookingForm = () => {
               <input
                 type="text"
                 name="name"
+                aria-label="Name"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
@@ -89,6 +90,7 @@ const BookingForm = () => {
               <input
                 type="tel"
                 name="mobile"
+                aria-label='Mobile Number'
                 placeholder="Mobile Number"
                 value={formData.mobile}
                 onChange={(e) => {
@@ -127,6 +129,7 @@ const BookingForm = () => {
                 <input
                   type="date"
                   name="date"
+                  aria-label='Date'
                   inputMode="numeric"
                   value={formData.date}
                   onChange={(e) => handleInputChange('date', e.target.value)}
@@ -140,6 +143,7 @@ const BookingForm = () => {
                 <input
                   type="time"
                   name="time"
+                  aria-label='Time'
                   inputMode="numeric"
                   value={formData.time}
                   onChange={(e) => handleInputChange('time', e.target.value)}
@@ -152,7 +156,7 @@ const BookingForm = () => {
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
               <Car className="text-neutral-400 w-5 h-5 mr-2" />
               <select
-                aria-labelledby='Vehicle Select'
+                aria-label='Vehicle Select'
                 value={formData.selectedVehicle?.id || ''}
                 onChange={(e) => {
                   const vehicle = fleet.find(v => v.id === Number(e.target.value));

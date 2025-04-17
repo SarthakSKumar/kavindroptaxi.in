@@ -25,6 +25,7 @@ const ContactSection = () => {
                       type="text"
                       name="name"
                       id="name"
+                      aria-label="Full Name"
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
                       placeholder="Your name"
                     />
@@ -33,6 +34,7 @@ const ContactSection = () => {
                     <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
                     <input
                       type="email"
+                      aria-label="Email Address"
                       name="email"
                       id="email"
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
@@ -47,6 +49,7 @@ const ContactSection = () => {
                     type="text"
                     id="subject"
                     name="subject"
+                    aria-label="Subject"
                     className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     placeholder="Booking inquiry"
                   />

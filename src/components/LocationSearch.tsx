@@ -58,6 +58,7 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
         <input
           type="text"
           name="location"
+          aria-label="Location"
           value={value}
           onChange={handleInputChange}
           onFocus={() => setIsFocused(true)}
