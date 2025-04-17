@@ -51,7 +51,7 @@ const Hero = () => {
                 href="https://wa.me/+919994680220"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white px-5 py-2 rounded-full bg-green-500 font-medium transition hover:shadow-lg hover:bg-green-600 flex items-center gap-2"
+                className="px-5 py-2 rounded-full bg-black text-white font-medium transition hover:shadow-lg hover:bg-green-600 flex items-center gap-2"
               >
                 <img src="/whatsapp.svg" className="w-5 h-5" alt="WhatsApp Logo" />
                 WhatsApp
