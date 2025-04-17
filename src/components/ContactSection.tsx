@@ -124,11 +124,10 @@ const ContactSection = () => {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <span className="text-lg font-medium">Email Addresses</span>
-                    <p className="text-neutral-600 mt-1">
-                      Bookings: kavindroptaxi.in@gmail.com<br />
-
-                    </p>
+                    <span className="text-lg font-medium block">Email</span>
+                    <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-600 mt-1">
+                      kavindroptaxi.in@gmail.com<br />
+                    </a>
                   </div>
                 </div>
               </div>
