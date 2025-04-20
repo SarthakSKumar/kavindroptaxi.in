@@ -33,12 +33,12 @@ const Hero = () => {
             "flex flex-col space-y-5 w-full transition-all duration-700 delay-100",
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold text-white leading-tight">
               <span className="text-primary"> Fast and Reliable</span><br />
               Effortless Rides, Every Time
             </h1>
 
-            <p className="text-lg text-white max-w-xl">
+            <p className="lg:text-lg md:text-base text-base text-white max-w-xl">
               Experience a smooth and secure drop taxi service with our affordable and convenient cab booking options.
             </p>
 
@@ -59,7 +59,7 @@ const Hero = () => {
             </div>
 
             {/* Key Features */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-4 pt-4 pb-0">
               <div className="flex items-center gap-2">
                 <div className="p-2 bg-primary/20 rounded-full">
                   <CalendarCheck className="h-5 w-5 text-primary" />
@@ -85,7 +85,7 @@ const Hero = () => {
           <div className={cn(
             "w-auto md:w-1/3 transition-all duration-700 delay-300",
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-            "md:px-0  scale-75 md:scale-100"
+            "md:px-0 pt-0 pb-4   scale-75 md:scale-100"
           )}>
             <BookingForm />
           </div>

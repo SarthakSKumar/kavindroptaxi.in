@@ -63,7 +63,7 @@ const BookingForm = () => {
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden w-[450px]">
       <div className="bg-primary p-3 px-6 border-b border-neutral-100">
-        <h2 className="text-xl font-semibold text-neutral-800 ">Quick Booking</h2>
+        <h2 className="text-2xl font-semibold text-neutral-800 ">Quick Booking</h2>
       </div>
 
       <div className="py-4 px-6">
