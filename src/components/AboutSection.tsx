@@ -12,7 +12,7 @@ const AboutSection = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-primary p-6 rounded-lg shadow-lg">
+              <div className="absolute -bottom-6 -right-6 bg-primary p-6 rounded-lg shadow-lg mx-4">
                 <div className="text-black text-center">
                   <div className="text-4xl font-bold">15+</div>
                   <div className="font-medium">Years of Experience</div>

@@ -15,7 +15,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -30,17 +30,21 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-1 px-6 lg:px-12',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-1 px-4 lg:px-12',
         isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90"
-          aria-label="Kavin Drop Taxi">
-          <img src="/Logo.webp" className="w-40" alt="Kavin Drop Taxi"
-            fetchPriority="high"
-          />
-        </a>
+      <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90"
+        aria-label="Kavin Drop Taxi">
+        <img
+          src="/Logo.webp"
+          className="w-32 sm:w-40"
+          alt="Kavin Drop Taxi"
+          fetchPriority="high"
+        />
+      </a>
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">

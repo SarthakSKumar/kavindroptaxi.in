@@ -24,9 +24,9 @@ const FleetSection = () => {
                 </div>
                 <p className="text-neutral-600 text-sm mb-4">{vehicle.description}</p>
                 <div className="flex items-center mb-2">
-                  <span className="text-sm font-medium mr-1">Capacity:</span>
-                  <div className="flex items-center">
-                    {vehicle.capacity} <User2Icon className="w-4 h-4 text-neutral-800" />
+                  <span className="text-sm  mr-1 text-neutral-600">Capacity:</span>
+                  <div className=" text-neutral-600 flex items-center font-semibold">
+                    {vehicle.capacity} <User2Icon className="w-4 h-4 text-neutral-800 " />
                   </div>
                 </div>
                 <p className="text-neutral-600 text-sm mb-2">

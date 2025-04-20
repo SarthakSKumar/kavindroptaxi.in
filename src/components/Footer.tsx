@@ -6,17 +6,19 @@ const Footer = () => {
   return (
     <footer className="bg-neutral-900 text-white pt-16 pb-8">
       <div className="container max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Company Info */}
           <div>
             <a
               href="/"
               className="text-2xl font-semibold tracking-tight text-foreground transition-opacity hover:opacity-90"
             >
-              <img src="/Logo.webp" className="w-44"
-                fetchPriority="high"
-                alt="Kavin Drop Taxi Logo"
-              />
+            <img
+              src="/Logo.webp"
+              className="w-32 sm:w-40"
+              alt="Kavin Drop Taxi"
+              fetchPriority="high"
+            />
             </a>
             <p className="text-neutral-400 my-8">
               Experience the perfect blend of comfort, reliability, and style with our premium taxi service. Available 24/7 for your convenience.
@@ -48,7 +50,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <span className="text-lg font-semibold mb-6">Quick Links</span>
+            <h1 className="text-lg font-semibold mb-2 pb-3">Quick Links</h1>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-neutral-400 hover:text-primary transition-colors" aria-label="Home">Home</a>
@@ -73,7 +75,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <span className="text-lg font-semibold mb-6">Contact Us</span>
+            <h1 className="text-lg font-semibold mb-2 pb-3">Contact Us</h1>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin size={18} className="text-primary mr-3 mt-1 flex-shrink-0" />

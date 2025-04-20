@@ -18,7 +18,7 @@ const ContactSection = () => {
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
 
               <form className="space-y-6">
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
                     <input
@@ -86,7 +86,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <span className="text-lg font-medium">Our Location</span>
-                    <p className="text-neutral-600 mt-1">
+                    <p className="text-neutral-600 mt-1 text-sm">
                       <a
                         href="https://www.google.com/maps/search/?api=1&query=2/97+Pillayar+Kovil+Street+Nadukkuppam+post+and+village+Arani+Taluk+Tiruvannamalai+district+606903"
                         target="_blank"
@@ -111,7 +111,7 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <span className="text-lg font-medium">Phone Numbers</span>
                     <p className="text-neutral-600 mt-1">
-                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800" aria-label="Call Us"
+                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800 text-sm" aria-label="Call Us"
                         rel="noopener noreferrer">
                         +91 9994680220
                       </a>
@@ -125,7 +125,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <span className="text-lg font-medium block">Email</span>
-                    <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-600 mt-1">
+                    <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-600 mt-1 text-sm">
                       kavindroptaxi.in@gmail.com<br />
                     </a>
                   </div>
