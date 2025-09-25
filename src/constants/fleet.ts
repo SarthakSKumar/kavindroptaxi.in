@@ -33,49 +33,16 @@ export const fleet: FleetInfo[] = [
     capacity: 4,
     singleTrip: 14,
     roundTrip: 13,
-    image: "/dzire.webp",
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thehindu.com%2Flife-and-style%2Fmotoring%2Fnew-maruti-dzire-tour-s-launched-in-india%2Farticle66496685.ece&psig=AOvVaw2tGPItiwwa_Rkt9lubFjVj&ust=1758877190520000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwi5ubaixvOPAxU-VXADHQSbHTwQjRx6BAgAEBo",
     description: "A smooth sedan ride with great mileage and comfort.",
     features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
-  },
-  {
-    id: 3,
-    name: "Honda Amaze",
-    capacity: 4,
-    singleTrip: 14,
-    roundTrip: 13,
-    image:
-      "https://www.team-bhp.com/forum/attachments/official-new-car-reviews/2696890d1734033882-2024-honda-amaze-review-2024_honda_amaze_exterior_01.webp",
-    description:
-      "A stylish and fuel-efficient sedan offering a comfortable ride.",
-    features: [
-      "4 passengers",
-      "2 luggage",
-      "Spacious cabin",
-      "ABS braking system",
-    ],
-  },
-  {
-    id: 4,
-    name: "Maruti Suzuki Ciaz",
-    capacity: 4,
-    singleTrip: 14,
-    roundTrip: 13,
-    image:
-      "/ciaz.webp",
-    description: "A premium sedan with luxury interiors and advanced features.",
-    features: [
-      "4 passengers",
-      "3 luggage",
-      "Premium interior",
-      "Touchscreen infotainment",
-    ],
   },
   {
     id: 5,
     name: "Toyota Innova",
     capacity: 7,
     singleTrip: 20,
-    roundTrip: 18,
+    roundTrip: 19,
     image:
       "https://www.jcrcab.com/wp-content/uploads/2017/12/INNOVE.jpg",
     description: "A spacious and powerful SUV ideal for long-distance travel.",
@@ -104,7 +71,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 17,
-    image: "/xylo.webp",
+    image: "https://imgd.aeplcdn.com/664x374/cw/ec/31432/Mahindra-Xylo-Exterior-109406.jpg?v=201711021421&q=80",
     description: "A multi-utility vehicle with ample space and durability.",
     features: [
       "7 passengers",
@@ -141,21 +108,6 @@ export const fleet: FleetInfo[] = [
       "4 luggage",
       "Fuel efficient",
       "Smartplay infotainment system",
-    ],
-  },
-  {
-    id: 10,
-    name: "Toyota Rumion",
-    capacity: 7,
-    singleTrip: 19,
-    roundTrip: 17,
-    image: "/rumion.webp",
-    description: "A practical and comfortable MUV with excellent performance.",
-    features: [
-      "7 passengers",
-      "4 luggage",
-      "Spacious interiors",
-      "Reliable engine performance",
     ],
   },
 ];
