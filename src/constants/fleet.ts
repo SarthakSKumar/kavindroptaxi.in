@@ -33,7 +33,7 @@ export const fleet: FleetInfo[] = [
     capacity: 4,
     singleTrip: 14,
     roundTrip: 13,
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thehindu.com%2Flife-and-style%2Fmotoring%2Fnew-maruti-dzire-tour-s-launched-in-india%2Farticle66496685.ece&psig=AOvVaw2tGPItiwwa_Rkt9lubFjVj&ust=1758877190520000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwi5ubaixvOPAxU-VXADHQSbHTwQjRx6BAgAEBo",
+    image: "https://th-i.thgim.com/public/incoming/xoxgon/article66496699.ece/alternates/FREE_1200/Dzire%20Tour.jpg",
     description: "A smooth sedan ride with great mileage and comfort.",
     features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
   },
