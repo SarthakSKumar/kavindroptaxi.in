@@ -1,4 +1,3 @@
-
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const ContactSection = () => {
@@ -13,10 +12,10 @@ const ContactSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Contact Form */}
           <div>
             <div className="bg-white rounded-xl p-8 shadow-md">
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
-
               <form className="space-y-6">
                 <div className="grid grid-cols-1 gap-6">
                   <div>
@@ -68,42 +67,88 @@ const ContactSection = () => {
                 <button
                   id="submit"
                   aria-label="Submit Form"
-                  type="submit" className="w-full py-3 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors">
+                  type="submit"
+                  className="w-full py-3 px-4 bg-primary text-black font-medium rounded-lg hover:bg-primary/90 transition-colors"
+                >
                   Send Message
                 </button>
               </form>
             </div>
           </div>
 
+          {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-white rounded-xl p-8 shadow-md">
               <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-
               <div className="space-y-6">
+
+                {/* Location 1 */}
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <span className="text-lg font-medium">Our Location</span>
+                    <span className="text-lg font-medium">Thiruvannamalai Office</span>
                     <p className="text-neutral-600 mt-1 text-sm">
                       <a
-                        href="https://www.google.com/maps/search/?api=1&query=2/97+Pillayar+Kovil+Street+Nadukkuppam+post+and+village+Arani+Taluk+Tiruvannamalai+district+606903"
+                        href="https://www.google.com/maps/search/?api=1&query=17/13+Lakshmi+puram+Gandhi+Nagar+Thiruvannamalai"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-black-600 hover:underline"
+                        className="hover:underline"
                       >
-                        2/97 Pillayar Kovil Street Nadukkuppam post
-                        <br />
-                        and village Arani Taluk
-                        <br />
-                        Tiruvannamalai district 606903
+                        17/13 Lakshmi puram<br />
+                        Gandhi Nagar<br />
+                        Thiruvannamalai
                       </a>
                     </p>
                   </div>
-
                 </div>
 
+                {/* Location 2 */}
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="ml-4">
+                    <span className="text-lg font-medium">Arani Office</span>
+                    <p className="text-neutral-600 mt-1 text-sm">
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=2/107+Pillayarkoovil+Street+Nadukuppam+Village+and+Post+Arani+Tiruvannamalai+District+606903"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        2/107 Pillayarkoovil Street<br />
+                        Nadukuppam Village & Post<br />
+                        Arani, Tiruvannamalai District 606903
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Location 3 */}
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="ml-4">
+                    <span className="text-lg font-medium">Bangalore Office</span>
+                    <p className="text-neutral-600 mt-1 text-sm">
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=Site+No+44%2645,+VRP+Woods+Layout,+1st+Cross,+Kithagnur,+K+R+Puram,+Bangalore+560036"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        Site No 44 & 45, VRP Woods Layout<br />
+                        1st Cross, Kithagnur, K R Puram<br />
+                        Bangalore - 560036
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Phone */}
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <Phone className="h-6 w-6 text-primary" />
@@ -111,14 +156,14 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <span className="text-lg font-medium">Phone Numbers</span>
                     <p className="text-neutral-600 mt-1">
-                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800 text-sm" aria-label="Call Us"
-                        rel="noopener noreferrer">
+                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800 text-sm" aria-label="Call Us">
                         +91 9994680220
                       </a>
                     </p>
                   </div>
                 </div>
 
+                {/* Email */}
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <Mail className="h-6 w-6 text-primary" />
@@ -126,10 +171,11 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <span className="text-lg font-medium block">Email</span>
                     <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-600 mt-1 text-sm">
-                      kavindroptaxi.in@gmail.com<br />
+                      kavindroptaxi.in@gmail.com
                     </a>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
