@@ -16,8 +16,7 @@ export const fleet: FleetInfo[] = [
     capacity: 4,
     singleTrip: 14,
     roundTrip: 13,
-    image:
-      "/etios.webp",
+    image: "/etios.webp",
     description:
       "A reliable and comfortable sedan, perfect for city and highway travel.",
     features: [
@@ -33,7 +32,8 @@ export const fleet: FleetInfo[] = [
     capacity: 4,
     singleTrip: 14,
     roundTrip: 13,
-    image: "https://th-i.thgim.com/public/incoming/xoxgon/article66496699.ece/alternates/FREE_1200/Dzire%20Tour.jpg",
+    image:
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thehindu.com%2Flife-and-style%2Fmotoring%2Fnew-maruti-dzire-tour-s-launched-in-india%2Farticle66496685.ece&psig=AOvVaw2tGPItiwwa_Rkt9lubFjVj&ust=1758877190520000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwi5ubaixvOPAxU-VXADHQSbHTwQjRx6BAgAEBo",
     description: "A smooth sedan ride with great mileage and comfort.",
     features: ["4 passengers", "2 luggage", "Compact design", "USB charging"],
   },
@@ -43,8 +43,7 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 20,
     roundTrip: 19,
-    image:
-      "https://www.jcrcab.com/wp-content/uploads/2017/12/INNOVE.jpg",
+    image: "https://www.jcrcab.com/wp-content/uploads/2017/12/INNOVE.jpg",
     description: "A spacious and powerful SUV ideal for long-distance travel.",
     features: ["7 passengers", "5 luggage", "Comfort seating", "Rear AC vents"],
   },
@@ -70,8 +69,9 @@ export const fleet: FleetInfo[] = [
     name: "Mahindra Xylo",
     capacity: 7,
     singleTrip: 19,
-    roundTrip: 17,
-    image: "https://imgd.aeplcdn.com/664x374/cw/ec/31432/Mahindra-Xylo-Exterior-109406.jpg?v=201711021421&q=80",
+    roundTrip: 18,
+    image:
+      "https://imgd.aeplcdn.com/664x374/cw/ec/31432/Mahindra-Xylo-Exterior-109406.jpg?v=201711021421&q=80",
     description: "A multi-utility vehicle with ample space and durability.",
     features: [
       "7 passengers",
@@ -85,7 +85,7 @@ export const fleet: FleetInfo[] = [
     name: "Mahindra Marazzo",
     capacity: 7,
     singleTrip: 19,
-    roundTrip: 17,
+    roundTrip: 18,
     image: "/marazzo.webp",
     description: "A stylish and comfortable MUV with modern features.",
     features: [
@@ -100,8 +100,9 @@ export const fleet: FleetInfo[] = [
     name: "Maruti Suzuki Ertiga",
     capacity: 7,
     singleTrip: 19,
-    roundTrip: 17,
-    image: "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/IMG20220901WA0009.jpg",
+    roundTrip: 18,
+    image:
+      "https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/IMG20220901WA0009.jpg",
     description: "A budget-friendly and efficient MUV for family trips.",
     features: [
       "7 passengers",
