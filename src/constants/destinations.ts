@@ -53,7 +53,7 @@ export const destinations: Destination[] = [
     distance: "363.5 km",
     duration: "6 hr 24 min",
     price: 5025,
-    image: "/hero2.webp",
+    image: "/hero.webp",
   },
   {
     from: "Chennai",

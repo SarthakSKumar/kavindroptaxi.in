@@ -17,7 +17,7 @@ const Hero = () => {
     <section
       className="relative min-h-screen pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden bg-cover bg-center flex flex-col items-center"
       style={{
-        backgroundImage: 'url("/hero2.webp")',
+        backgroundImage: 'url("/hero.webp")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}

@@ -16,7 +16,8 @@ export const fleet: FleetInfo[] = [
     capacity: 4,
     singleTrip: 14,
     roundTrip: 13,
-    image: "/etios.webp",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbG4Ylg9GN7FlBxOfAcWd1n-Ec5XpQBKUnyA&s",
     description:
       "A reliable and comfortable sedan, perfect for city and highway travel.",
     features: [
@@ -86,7 +87,8 @@ export const fleet: FleetInfo[] = [
     capacity: 7,
     singleTrip: 19,
     roundTrip: 18,
-    image: "/marazzo.webp",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86oIB6BDSFlYks6QLZXYpiv0IlFpZdd5Hcw&s",
     description: "A stylish and comfortable MUV with modern features.",
     features: [
       "7 passengers",

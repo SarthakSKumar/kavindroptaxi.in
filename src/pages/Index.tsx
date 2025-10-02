@@ -30,9 +30,6 @@ const Index = () => {
         <div className="scroll-section">
           <PopularDestinationSection />
         </div>
-        {/* <div className="scroll-section">
-          <ServicesSection />
-        </div> */}
         <div className="scroll-section">
           <FleetSection />
         </div>
