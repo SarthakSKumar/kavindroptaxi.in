@@ -82,28 +82,6 @@ const ContactSection = () => {
               <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
               <div className="space-y-6">
 
-                {/* Location 1 */}
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="ml-4">
-                    <span className="text-lg font-medium">Thiruvannamalai Office</span>
-                    <p className="text-neutral-600 mt-1 text-sm">
-                      <a
-                        href="https://www.google.com/maps/search/?api=1&query=17/13+Lakshmi+puram+Gandhi+Nagar+Thiruvannamalai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline"
-                      >
-                        17/13 Lakshmi puram<br />
-                        Gandhi Nagar<br />
-                        Thiruvannamalai
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
                 {/* Location 2 */}
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
@@ -170,8 +148,8 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <span className="text-lg font-medium block">Email</span>
-                    <a href="mailto:kavindroptaxi.in@gmail.com" className="text-neutral-600 mt-1 text-sm">
-                      kavindroptaxi.in@gmail.com
+                    <a href="mailto:kavindroptaxis@gmail.com" className="text-neutral-600 mt-1 text-sm">
+                      kavindroptaxis@gmail.com
                     </a>
                   </div>
                 </div>
