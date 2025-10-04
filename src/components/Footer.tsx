@@ -80,8 +80,9 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="text-primary mr-3 mt-1 flex-shrink-0" />
                 <span className="text-neutral-400">
-                  2/97 Pillayar Kovil Street Nadukkuppam post and village Arani Taluk
-                  Tiruvannamalai district 606903
+                  2/97, Pillayar Kovil Street, Nadukkuppam post and village, Arani Taluk,
+                  Tiruvannamalai
+                  606903
                 </span>
               </li>
               <li className="flex items-center">
