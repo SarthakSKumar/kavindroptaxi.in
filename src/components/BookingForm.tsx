@@ -71,7 +71,7 @@ const BookingForm = () => {
           <div className="space-y-3">
             {/* Personal Details */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-              <User className="text-neutral-400 w-5 h-5 mr-2" />
+              <User className="text-neutral-500 w-5 h-5 mr-2" />
               <input
                 type="text"
                 name="name"
@@ -85,7 +85,7 @@ const BookingForm = () => {
 
             {/* Mobile Number */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-              <Phone className="text-neutral-400 w-5 h-5 mr-2" />
+              <Phone className="text-neutral-500 w-5 h-5 mr-2" />
               <span className="text-neutral-600 font-medium pr-1 text-lg">+91</span>
               <input
                 type="tel"
@@ -125,7 +125,7 @@ const BookingForm = () => {
             <div className="grid grid-cols-2 gap-4">
               {/* Date Picker */}
               <div className="flex items-center w-full px-4 py-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-                <CalendarIcon className="text-neutral-400 w-5 h-5 mr-2" />
+                <CalendarIcon className="text-neutral-500 w-5 h-5 mr-2" />
                 <input
                   type="date"
                   name="date"
@@ -154,7 +154,7 @@ const BookingForm = () => {
             </div>
             {/* Vehicle Selection */}
             <div className="flex items-center w-full p-3 rounded-lg border border-neutral-200 hover:border-neutral-300 transition-all">
-              <Car className="text-neutral-400 w-5 h-5 mr-2" />
+              <Car className="text-neutral-500 w-5 h-5 mr-2" />
               <select
                 aria-label='Vehicle Select'
                 value={formData.selectedVehicle?.id || ''}

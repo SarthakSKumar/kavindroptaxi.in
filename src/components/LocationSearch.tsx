@@ -54,7 +54,7 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
   return (
     <div className={cn("relative", className)}>
       <div className="flex items-center w-full px-4 py-3 rounded-lg border transition-all duration-200 bg-white border-neutral-200 hover:border-neutral-300">
-        <MapPin size={18} className="text-neutral-400 mr-2 flex-shrink-0" />
+        <MapPin size={18} className="text-neutral-500 mr-2 flex-shrink-0" />
         <input
           type="text"
           name="location"
@@ -64,7 +64,7 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
           onFocus={() => setIsFocused(true)}
           onBlur={() => setTimeout(() => setIsFocused(false), 150)}
           placeholder={placeholder}
-          className="flex-1 bg-transparent border-none outline-none text-neutral-800 placeholder:text-neutral-400"
+          className="flex-1 bg-transparent border-none outline-none text-neutral-800 placeholder:text-neutral-500"
         />
         {value && (
           <button
@@ -72,7 +72,7 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
             type="button"
             aria-label="Clear input"
 
-            className="flex-shrink-0 text-neutral-400 hover:text-neutral-600 transition-colors"
+            className="flex-shrink-0 text-neutral-500 hover:text-neutral-600 transition-colors"
           >
             <X size={16} />
           </button>
@@ -89,7 +89,7 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
                 className="px-4 py-2 hover:bg-neutral-50 cursor-pointer transition-colors flex items-center"
                 onClick={() => handleSuggestionClick(suggestion.display_name)}
               >
-                <MapPin size={16} className="text-neutral-400 mr-2 flex-shrink-0" />
+                <MapPin size={16} className="text-neutral-500 mr-2 flex-shrink-0" />
                 <span className="text-neutral-700">{suggestion.display_name}</span>
               </li>
             ))}
