@@ -14,7 +14,7 @@ const Footer = () => {
               className="text-2xl font-semibold tracking-tight text-foreground transition-opacity hover:opacity-90"
             >
             <img
-              src="/logo.webp"
+              src="/logo-main.webp"
               className="w-32 sm:w-40"
               alt="Kavin Drop Taxi"
               fetchPriority="high"

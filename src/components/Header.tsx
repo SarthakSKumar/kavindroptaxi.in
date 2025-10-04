@@ -35,15 +35,15 @@ const Header = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90"
-        aria-label="Kavin Drop Taxi">
-        <img
-          src="/logo.webp"
-          className="w-32 sm:w-40"
-          alt="Kavin Drop Taxi"
-          fetchPriority="high"
-        />
-      </a>
+        <a href="/" className="text-2xl font-semibold tracking-tight transition-opacity hover:opacity-90"
+          aria-label="Kavin Drop Taxi">
+          <img
+            src="/logo-main.webp"
+            className="w-32 sm:w-40"
+            alt="Kavin Drop Taxi"
+            fetchPriority="high"
+          />
+        </a>
 
 
         {/* Desktop Navigation */}
