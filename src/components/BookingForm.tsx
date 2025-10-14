@@ -45,8 +45,21 @@ const BookingForm = () => {
     }
   };
 
-  const handleConfirmBooking = () => {
-    setCurrentStep(3);
+  const handleConfirmBooking = async () => {
+    try {
+      const response = await fetch(import.meta.env.VITE_GOOGLE_APPS_SCRIPT_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      setCurrentStep(3); // Show confirmation screen
+    } catch (err) {
+      console.error("Booking submission failed:", err);
+    }
   };
 
   useEffect(() => {
