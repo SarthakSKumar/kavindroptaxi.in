@@ -17,6 +17,8 @@ const BookingForm = () => {
     selectedVehicle: null as FleetInfo | null,
   });
   const [isVehicleDropdownOpen, setIsVehicleDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData({ ...formData, [field]: value });
@@ -46,6 +48,8 @@ const BookingForm = () => {
   };
 
   const handleConfirmBooking = async () => {
+    setLoading(true);
+    setError(null);
     try {
       const response = await fetch(import.meta.env.VITE_GOOGLE_APPS_SCRIPT_ENDPOINT, {
         method: "POST",
@@ -56,9 +60,16 @@ const BookingForm = () => {
         body: JSON.stringify(formData),
       });
 
+      if (response.status >= 400 && response.status < 600) {
+        throw new Error("Failed to submit booking. Please try again.");
+      }
+
       setCurrentStep(3); // Show confirmation screen
     } catch (err) {
       console.error("Booking submission failed:", err);
+      setError("Failed to submit booking. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -80,6 +91,11 @@ const BookingForm = () => {
       </div>
 
       <div className="py-4 px-6">
+        {error && (
+          <div className="bg-red-100 text-red-700 p-3 rounded-lg mb-4">
+            {error}
+          </div>
+        )}
         {currentStep === 1 && (
           <div className="space-y-3">
             {/* Personal Details */}
@@ -191,18 +207,18 @@ const BookingForm = () => {
 
             <button
               onClick={handleContinue}
-              disabled={!isStepOneValid()}
+              disabled={!isStepOneValid() || loading}
               type="button"
               id="continue"
               aria-label="Continue to Booking Confirmation"
               className={cn(
                 "w-full py-3 rounded-full font-medium transition-colors mt-4",
-                isStepOneValid()
+                isStepOneValid() && !loading
                   ? "bg-primary text-neutral-800 hover:bg-primary/90"
                   : "bg-neutral-200 text-neutral-500 cursor-not-allowed"
               )}
             >
-              Book Now
+              {loading ? "Loading..." : "Book Now"}
             </button>
           </div>
         )}
@@ -237,12 +253,18 @@ const BookingForm = () => {
               </button>
               <button
                 onClick={handleConfirmBooking}
+                disabled={loading}
                 type="button"
                 id="confirm"
                 aria-label="Confirm Booking"
-                className="flex-1 py-3 rounded-full font-medium bg-primary text-neutral-800 hover:bg-primary/90 transition-colors"
+                className={cn(
+                  "flex-1 py-3 rounded-full font-medium transition-colors",
+                  loading
+                    ? "bg-neutral-200 text-neutral-500 cursor-not-allowed"
+                    : "bg-primary text-neutral-800 hover:bg-primary/90"
+                )}
               >
-                Confirm Booking
+                {loading ? "Submitting..." : "Confirm Booking"}
               </button>
             </div>
           </div>
