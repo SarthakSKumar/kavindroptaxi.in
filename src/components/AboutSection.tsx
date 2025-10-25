@@ -7,8 +7,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="bg-neutral-300 rounded-lg overflow-hidden relative aspect-[16/9] md:aspect-[4/3] w-full">
                 <img
-                  src="https://s.alicdn.com/@sc04/kf/H367c3ad55d7d42749c879c01a6a5e155M.jpg?avif=close&webp=close"
-                
+                  src="/hero.webp"
                   alt="Kavin Drop Taxi Service"
                   className="w-full h-full object-cover"
                 />
