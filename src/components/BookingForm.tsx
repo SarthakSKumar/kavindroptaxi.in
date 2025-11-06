@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 import { CalendarIcon, User, Phone, Car } from 'lucide-react';
-import LocationSearch from './LocationSearch';
+import LocationSearch, { LocationResult } from './LocationSearch';
 import { cn } from '@/lib/utils';
 import { bookingConfirmationFields } from '@/constants/form';
 import { FleetInfo, fleet } from '@/constants/fleet';
@@ -10,28 +11,37 @@ const BookingForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
-    pickup: '',
-    destination: '',
+    pickup: null as LocationResult | null,
+    destination: null as LocationResult | null,
     date: '',
     time: '',
     selectedVehicle: null as FleetInfo | null,
   });
+  const [distanceText, setDistanceText] = useState<string | null>(null);
+  const [distanceMeters, setDistanceMeters] = useState<number | null>(null);
   const [isVehicleDropdownOpen, setIsVehicleDropdownOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData({ ...formData, [field]: value });
+  const handleInputChange = (field: string, value: any) => {
+    // If pickup/destination, value is LocationResult | null
+    if (field === 'pickup' || field === 'destination') {
+      setFormData({ ...formData, [field]: value });
+    } else {
+      setFormData({ ...formData, [field]: value });
+    }
   };
 
   const isStepOneValid = () => {
-    return formData.name &&
-      formData.mobile &&
-      formData.pickup &&
-      formData.destination &&
-      formData.date &&
-      formData.time &&
-      formData.selectedVehicle;
+    return (
+      !!formData.name &&
+      !!formData.mobile &&
+      !!formData.pickup &&
+      !!formData.destination &&
+      !!formData.date &&
+      !!formData.time &&
+      !!formData.selectedVehicle
+    );
   };
 
   const getMinTime = () => {
@@ -51,16 +61,30 @@ const BookingForm = () => {
     setLoading(true);
     setError(null);
     try {
+      // Prepare payload with location strings and distance info
+      const payload = {
+        name: formData.name,
+        mobile: formData.mobile,
+        pickup: formData.pickup?.address ?? '',
+        destination: formData.destination?.address ?? '',
+        date: formData.date,
+        time: formData.time,
+        selectedVehicle: formData.selectedVehicle?.name ?? '',
+        vehicleCapacity: formData.selectedVehicle?.capacity ?? '',
+        distanceKm: distanceText ?? 'N/A',
+        distanceMeters: distanceMeters ?? 0,
+      };
+
       const response = await fetch(import.meta.env.VITE_GOOGLE_APPS_SCRIPT_ENDPOINT, {
         method: "POST",
         mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
-      if (response.status >= 400 && response.status < 600) {
+      if (response && response.status >= 400 && response.status < 600) {
         throw new Error("Failed to submit booking. Please try again.");
       }
 
@@ -83,6 +107,53 @@ const BookingForm = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isVehicleDropdownOpen]);
+
+  // compute driving distance using OSRM (Open Source Routing Machine) when both locations are selected
+  useEffect(() => {
+    const computeDistance = async () => {
+      if (!formData.pickup || !formData.destination) {
+        setDistanceText(null);
+        setDistanceMeters(null);
+        return;
+      }
+
+      try {
+        // OSRM API format: lng,lat (note: longitude first!)
+        const fromCoords = `${formData.pickup.lng},${formData.pickup.lat}`;
+        const toCoords = `${formData.destination.lng},${formData.destination.lat}`;
+
+        const response = await fetch(
+          `https://router.project-osrm.org/route/v1/driving/${fromCoords};${toCoords}?overview=false`,
+          {
+            headers: {
+              'User-Agent': 'KavindropTaxi/1.0',
+            },
+          }
+        );
+
+        const data = await response.json();
+
+        if (data.code === 'Ok' && data.routes && data.routes.length > 0) {
+          const route = data.routes[0];
+          const distanceMetersValue = route.distance; // OSRM returns distance in meters
+          const distanceKm = (distanceMetersValue / 1000).toFixed(1);
+
+          setDistanceText(`${distanceKm} km`);
+          setDistanceMeters(distanceMetersValue);
+        } else {
+          console.error('OSRM routing failed:', data.code || 'No route found');
+          setDistanceText(null);
+          setDistanceMeters(null);
+        }
+      } catch (err) {
+        console.error('Error computing route distance:', err);
+        setDistanceText(null);
+        setDistanceMeters(null);
+      }
+    };
+
+    computeDistance();
+  }, [formData.pickup, formData.destination]);
 
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden w-[450px]">
@@ -139,14 +210,14 @@ const BookingForm = () => {
             <LocationSearch
               placeholder="Enter pickup location"
               onChange={(value) => handleInputChange('pickup', value)}
-              defaultValue={formData.pickup}
+              defaultValue={formData.pickup?.address ?? ''}
               className='mb-4 text-lg'
             />
 
             <LocationSearch
               placeholder="Enter destination"
               onChange={(value) => handleInputChange('destination', value)}
-              defaultValue={formData.destination}
+              defaultValue={formData.destination?.address ?? ''}
               className='mb-4 text-lg'
             />
 
@@ -205,6 +276,10 @@ const BookingForm = () => {
               </select>
             </div>
 
+            {distanceText && (
+              <div className="text-sm text-neutral-600 mt-2">Estimated distance: <span className="font-medium">{distanceText}</span></div>
+            )}
+
             <button
               onClick={handleContinue}
               disabled={!isStepOneValid() || loading}
@@ -226,19 +301,37 @@ const BookingForm = () => {
         {currentStep === 2 && (
           <div className="space-y-4">
             <div className="bg-neutral-50 p-4 rounded-lg space-y-3">
-              {bookingConfirmationFields.map((field) => (
-                <div key={field.key} className="flex justify-between">
-                  <span className="text-neutral-500">{field.label}</span>
-                  <span
-                    className={cn(
-                      "font-medium",
-                      field.isTruncated && " truncate max-w-[150px] overflow-hidden whitespace-nowrap"
-                    )}
-                  >
-                    {field.value(formData)}
-                  </span>
+              {(() => {
+                // bookingConfirmationFields was designed for string pickup/destination.
+                // Build a display-friendly version where pickup/destination are addresses.
+                const displayFormData: any = {
+                  ...formData,
+                  pickup: formData.pickup?.address ?? '',
+                  destination: formData.destination?.address ?? '',
+                };
+
+                return bookingConfirmationFields.map((field) => (
+                  <div key={field.key} className="flex justify-between">
+                    <span className="text-neutral-500">{field.label}</span>
+                    <span
+                      className={cn(
+                        "font-medium",
+                        field.isTruncated && " truncate max-w-[150px] overflow-hidden whitespace-nowrap"
+                      )}
+                    >
+                      {field.value(displayFormData)}
+                    </span>
+                  </div>
+                ));
+              })()}
+
+              {/* Show estimated distance in confirmation */}
+              {distanceText && (
+                <div className="flex justify-between pt-2 border-t border-neutral-200">
+                  <span className="text-neutral-500">Estimated Distance</span>
+                  <span className="font-medium text-primary">{distanceText}</span>
                 </div>
-              ))}
+              )}
             </div>
 
             <div className="flex gap-4">
@@ -290,8 +383,8 @@ const BookingForm = () => {
                 setFormData({
                   name: '',
                   mobile: '',
-                  pickup: '',
-                  destination: '',
+                  pickup: null,
+                  destination: null,
                   date: '',
                   time: '',
                   selectedVehicle: null,
