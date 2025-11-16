@@ -61,6 +61,12 @@ const BookingForm = () => {
     setLoading(true);
     setError(null);
     try {
+      // Calculate estimated fare
+      const distanceKm = distanceMeters ? distanceMeters / 1000 : 0;
+      const ratePerKm = formData.selectedVehicle?.singleTrip ?? 0;
+      const driverAllowance = 400;
+      const estimatedFare = Math.round(distanceKm * ratePerKm + driverAllowance);
+
       // Prepare payload with location strings and distance info
       const payload = {
         name: formData.name,
@@ -73,6 +79,9 @@ const BookingForm = () => {
         vehicleCapacity: formData.selectedVehicle?.capacity ?? '',
         distanceKm: distanceText ?? 'N/A',
         distanceMeters: distanceMeters ?? 0,
+        ratePerKm: ratePerKm,
+        driverAllowance: driverAllowance,
+        estimatedFare: estimatedFare,
       };
 
       const response = await fetch(import.meta.env.VITE_GOOGLE_APPS_SCRIPT_ENDPOINT, {
@@ -300,14 +309,14 @@ const BookingForm = () => {
 
         {currentStep === 2 && (
           <div className="space-y-4">
+            {/* Booking Details */}
             <div className="bg-neutral-50 p-4 rounded-lg space-y-3">
               {(() => {
-                // bookingConfirmationFields was designed for string pickup/destination.
-                // Build a display-friendly version where pickup/destination are addresses.
                 const displayFormData: any = {
                   ...formData,
                   pickup: formData.pickup?.address ?? '',
                   destination: formData.destination?.address ?? '',
+                  selectedVehicle: formData.selectedVehicle,
                 };
 
                 return bookingConfirmationFields.map((field) => (
@@ -324,15 +333,40 @@ const BookingForm = () => {
                   </div>
                 ));
               })()}
-
-              {/* Show estimated distance in confirmation */}
-              {distanceText && (
-                <div className="flex justify-between pt-2 border-t border-neutral-200">
-                  <span className="text-neutral-500">Estimated Distance</span>
-                  <span className="font-medium text-primary">{distanceText}</span>
-                </div>
-              )}
             </div>
+
+            {/* Trip Summary */}
+            {distanceText && distanceMeters && formData.selectedVehicle && (
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-4 rounded-lg border border-primary/20">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-neutral-600">Total Distance</span>
+                    <span className="font-semibold text-neutral-800">{distanceText}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-neutral-600">Rate Per Km</span>
+                    <span className="font-semibold text-neutral-800">₹{formData.selectedVehicle.singleTrip}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-neutral-600">Driver Allowance</span>
+                    <span className="font-semibold text-neutral-800">₹400.00</span>
+                  </div>
+
+                  <div className="border-t border-primary/20 my-2 pt-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg font-semibold text-neutral-800">Estimated Fare</span>
+                      <span className="text-xl font-bold text-primary">
+                        ₹{Math.round((distanceMeters / 1000) * formData.selectedVehicle.singleTrip + 400)}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-neutral-500 mt-2 italic">
+                    Note: Excludes additional km, toll, and hill station charges.
+                  </p>
+                </div>
+              </div>
+            )}
 
             <div className="flex gap-4">
               <button
