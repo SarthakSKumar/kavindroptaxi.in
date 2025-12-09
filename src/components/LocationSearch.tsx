@@ -23,6 +23,41 @@ interface NominatimResult {
   lon: string;
 }
 
+interface PhotonFeature {
+  geometry: {
+    coordinates: [number, number]; // [lng, lat]
+  };
+  properties: {
+    osm_id?: number;
+    name?: string;
+    street?: string;
+    housenumber?: string;
+    city?: string;
+    district?: string;
+    state?: string;
+    country?: string;
+    postcode?: string;
+  };
+}
+
+// Format Photon result into a readable address
+const formatPhotonResult = (feature: PhotonFeature): string => {
+  const props = feature.properties;
+  const parts: string[] = [];
+  
+  if (props.name) parts.push(props.name);
+  if (props.street) {
+    const street = props.housenumber ? `${props.housenumber} ${props.street}` : props.street;
+    if (!parts.includes(street)) parts.push(street);
+  }
+  if (props.district && !parts.includes(props.district)) parts.push(props.district);
+  if (props.city && !parts.includes(props.city)) parts.push(props.city);
+  if (props.state && !parts.includes(props.state)) parts.push(props.state);
+  if (props.country && !parts.includes(props.country)) parts.push(props.country);
+  
+  return parts.join(', ') || 'Unknown location';
+};
+
 const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }: LocationSearchProps) => {
   const [value, setValue] = useState(defaultValue);
   const [suggestions, setSuggestions] = useState<NominatimResult[]>([]);
@@ -47,17 +82,24 @@ const LocationSearch = ({ placeholder, defaultValue = "", onChange, className }:
     setIsLoading(true);
 
     try {
+      // Use Photon API (Komoot) - CORS-friendly geocoding based on OpenStreetMap data
       const response = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&countrycodes=IN&q=${encodeURIComponent(query)}&limit=5`,
+        `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=5&lang=en`,
         {
           signal: abortControllerRef.current.signal,
-          headers: {
-            'User-Agent': 'KavindropTaxi/1.0',
-          },
         }
       );
-      const data: NominatimResult[] = await response.json();
-      setSuggestions(data);
+      const data = await response.json();
+      
+      // Transform Photon response to match our NominatimResult format
+      const results: NominatimResult[] = data.features?.map((feature: PhotonFeature) => ({
+        place_id: feature.properties.osm_id || Math.random(),
+        display_name: formatPhotonResult(feature),
+        lat: feature.geometry.coordinates[1].toString(),
+        lon: feature.geometry.coordinates[0].toString(),
+      })) || [];
+      
+      setSuggestions(results);
     } catch (error: unknown) {
       if (error instanceof Error && error.name !== 'AbortError') {
         console.error("Error fetching location data:", error);
