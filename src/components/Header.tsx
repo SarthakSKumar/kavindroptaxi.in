@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, PhoneCall, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn, trackPhoneClick } from '@/lib/utils';
 
 const navigationItems = [
   { label: 'Home', href: '#' },
@@ -62,6 +62,7 @@ const Header = () => {
           ))}
           <a
             href="tel:9994680220"
+            onClick={trackPhoneClick}
             className="flex flex-row items-center gap-1.5 font-semibold px-5 py-2.5 rounded-full bg-primary text-black transition-all hover:shadow-lg hover:shadow-primary/20 hover:bg-primary/90"
           >
             <PhoneCall className="w-5 h-5" /> +91 9994680220

@@ -1,5 +1,6 @@
 import { Clock, MapPin } from 'lucide-react';
 import { destinations } from '@/constants/destinations';
+import { trackWhatsAppClick } from '@/lib/utils';
 
 const PopularDestinationSection = () => {
     return (
@@ -45,7 +46,10 @@ const PopularDestinationSection = () => {
                                         type="button"
                                         aria-label='Enquire Now'
                                             className="py-2 px-4 bg-primary text-neutral-800 rounded-full text-sm font-medium hover:bg-yellow-200 transition-colors duration-200"
-                                            onClick={() => window.open("https://wa.me/919994680220?text=Hello, I would like to enquire about your services.", "_blank")}>
+                                            onClick={() => {
+                                              trackWhatsAppClick();
+                                              window.open("https://wa.me/919994680220?text=Hello, I would like to enquire about your services.", "_blank");
+                                            }}>
                                             Enquire
                                         </button>
 

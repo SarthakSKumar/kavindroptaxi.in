@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { CalendarIcon, User, Phone, Car } from 'lucide-react';
 import LocationSearch, { LocationResult } from './LocationSearch';
-import { cn } from '@/lib/utils';
+import { cn, trackFormStep } from '@/lib/utils';
 import { bookingConfirmationFields } from '@/constants/form';
 import { FleetInfo, fleet } from '@/constants/fleet';
 
@@ -53,6 +53,7 @@ const BookingForm = () => {
 
   const handleContinue = () => {
     if (isStepOneValid()) {
+      trackFormStep(2);
       setCurrentStep(2);
     }
   };
@@ -95,6 +96,16 @@ const BookingForm = () => {
 
       if (response && response.status >= 400 && response.status < 600) {
         throw new Error("Failed to submit booking. Please try again.");
+      }
+
+      // Fire Google Ads conversion tracking
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-17618589958/ame_CO_J7qgbEIaymdFB',
+          'value': estimatedFare,
+          'currency': 'INR',
+          'transaction_id': `${Date.now()}-${formData.mobile}`,
+        });
       }
 
       setCurrentStep(3); // Show confirmation screen

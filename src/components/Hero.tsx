@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
-import { cn } from '@/lib/utils';
+import { cn, trackPhoneClick, trackWhatsAppClick } from '@/lib/utils';
 import { PhoneCall, CalendarCheck, Shield, Banknote } from 'lucide-react';
 
 const Hero = () => {
@@ -44,13 +44,17 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4 pt-4">
               <a
-                aria-label="Contact Us" href="tel: 9994680220" className="flex items-center gap-2.5 font-semibold px-5 py-2 rounded-full bg-primary text-black transition hover:shadow-lg hover:bg-primary/90">
+                aria-label="Contact Us" 
+                href="tel:9994680220" 
+                onClick={trackPhoneClick}
+                className="flex items-center gap-2.5 font-semibold px-5 py-2 rounded-full bg-primary text-black transition hover:shadow-lg hover:bg-primary/90">
                 <PhoneCall className="w-5 h-5" /> +91 9994680220
               </a>
               <a
                 href="https://wa.me/+919994680220"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppClick}
                 className="px-5 py-2 rounded-full bg-black text-white font-medium transition hover:shadow-lg hover:bg-green-600 flex items-center gap-2"
               >
                 <img src="/whatsapp.svg" className="w-5 h-5" alt="WhatsApp Logo" />

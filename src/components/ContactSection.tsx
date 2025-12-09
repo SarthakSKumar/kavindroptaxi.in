@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import { trackPhoneClick } from '@/lib/utils';
 
 const ContactSection = () => {
   return (
@@ -134,7 +135,7 @@ const ContactSection = () => {
                   <div className="ml-4">
                     <span className="text-lg font-medium">Phone Numbers</span>
                     <p className="text-neutral-600 mt-1">
-                      <a href="tel:+919994680220" className="text-neutral-600 hover:text-gray-800 text-sm" aria-label="Call Us">
+                      <a href="tel:+919994680220" onClick={trackPhoneClick} className="text-neutral-600 hover:text-gray-800 text-sm" aria-label="Call Us">
                         +91 9994680220
                       </a>
                     </p>

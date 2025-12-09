@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { trackPhoneClick } from '@/lib/utils';
 
 const Footer = () => {
   return (
@@ -87,7 +88,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="text-primary mr-3 flex-shrink-0" />
-                <a href="tel:+919994680220" className="text-neutral-500 hover:text-white transition-colors" aria-label="Contact Us">
+                <a href="tel:+919994680220" onClick={trackPhoneClick} className="text-neutral-500 hover:text-white transition-colors" aria-label="Contact Us">
                   +91 9994680220
                 </a>
               </li>
